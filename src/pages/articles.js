@@ -132,10 +132,10 @@ export default function Articles() {
   return (
     <>
       <Head>
-        <title>Development Articles | By NexTemp</title>
+        <title>Artículos de Desarrollo | DaniDev</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Artículos y recursos de DaniDev sobre desarrollo web, apps, WordPress y Shopify."
         />
       </Head>
       <TransitionEffect />

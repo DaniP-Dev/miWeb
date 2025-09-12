@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>NexTemp Built with Nextjs</title>
+        <title>DaniDev | Desarrollo Web y Apps</title>
         <meta
           name="description"
-          content="Next Portfolio, A open-source portfolio theme built with Nextjs"
+          content="Portfolio, servicios y artículos de DaniDev: desarrollo web, apps, WordPress y Shopify."
         />
       </Head>
 
@@ -88,8 +88,8 @@ export default function Home() {
             width="280"
             height="120"
             src="https://seasonal-au.netlify.app/"
-            frameborder="0"
-            allowfullscreen
+            frameBorder="0"
+            allowFullScreen
           ></iframe>
         </div>
         <HireMe />

@@ -38,10 +38,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About NexTemp</title>
+        <title>Sobre DaniDev | Portfolio y Experiencia</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Conoce a DaniDev: experiencia, habilidades y proyectos en desarrollo web, apps, WordPress y Shopify."
         />
       </Head>
 
@@ -102,7 +102,7 @@ export default function About() {
                 className="h-auto w-full rounded-2xl border-2 border-solid border-dark"
                 priority={true}
                 src={profile}
-                alt="Travis Lord"
+                alt="DaniDev"
                 sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               33vw"

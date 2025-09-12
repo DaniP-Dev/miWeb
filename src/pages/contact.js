@@ -48,10 +48,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>NexTemp Built with Nextjs</title>
+        <title>Contacto | DaniDev</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Contacta a DaniDev para desarrollo web, apps, WordPress y Shopify. ¡Hablemos de tu proyecto!"
         />
       </Head>
 

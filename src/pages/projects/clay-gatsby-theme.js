@@ -39,16 +39,12 @@ export default function About() {
   return (
     <>
       <Head>
-        <link
-          rel="canonical"
-          href="https://travislord.xyz/projects/clay-gatsby-theme"
-        ></link>
         <title>
-          Clay Theme | Unlocking The Power Of Gatsby V5+ | By Travis Lord
+          Clay Theme | Unlocking The Power Of Gatsby V5+ | DaniDev
         </title>
         <meta
           name="description"
-          content="I am thrilled to share Clay Theme with the web development community! I have recently launched Clay Theme, a cutting-edge Gatsby Framework Template."
+          content="Clay Theme: ejemplo de integración Gatsby + NetlifyCMS. Página de proyecto por DaniDev."
         />
       </Head>
 
@@ -75,12 +71,7 @@ export default function About() {
               </h3>
               <div classNname="w-full border-2 border-solid border-light bg-light"></div>
               <p className="">
-                I am thrilled to share some exciting news with the web
-                development community! I have recently launched a cutting-edge
-                Gatsby Framework Template called Clay, meticulously crafted to
-                seamlessly integrate with Netlify CMS, providing an effortless
-                and efficient solution for content management in the realm of
-                web development.
+                Clay es un ejemplo de integración avanzada entre Gatsby y Netlify CMS, ideal para proyectos modernos de contenido y desarrollo web.
               </p>
               <h4 className="mt-4 text-lg font-800 capitalize text-dark/75 dark:text-light/75">
                 Unleashing the Power of Gatsby Framework
@@ -97,12 +88,7 @@ export default function About() {
 
               <div className="mt-2 flex items-center grid-cols-8 gap-4 sm:gap-8">
                 <Link
-                  className="rounded-lg
-             bg-dark p-2 px-6 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
-            md:p-2 md:px-4 md:text-base"
+         className="rounded-lg bg-dark p-2 px-6 text-lg font-semibold sm:px-4 sm:text-base border-2 border-solid capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light md:p-2 md:px-4 md:text-base"
                   aria-label="Visit Theme Demo"
                   href="https://clay-theme.netlify.app"
                   target={"_blank"}

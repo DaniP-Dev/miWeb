@@ -231,10 +231,10 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects | By NexTemp</title>
+        <title>Proyectos | DaniDev</title>
         <meta
           name="description"
-          content="NexTemp, A open-source portfolio theme built with Nextjs"
+          content="Proyectos realizados por DaniDev: desarrollo web, apps, WordPress y Shopify."
         />
       </Head>
 
