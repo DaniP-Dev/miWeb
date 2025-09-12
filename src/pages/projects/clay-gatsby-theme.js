@@ -40,11 +40,11 @@ export default function About() {
     <>
       <Head>
         <title>
-          Clay Theme | Unlocking The Power Of Gatsby V5+ | DaniDev
+          Plataforma de Soluciones Digitales | Proyecto Destacado | DaniDev
         </title>
         <meta
           name="description"
-          content="Clay Theme: ejemplo de integración Gatsby + NetlifyCMS. Página de proyecto por DaniDev."
+          content="Desarrollo de una plataforma integral para gestión de servicios digitales, automatización de procesos y presencia online."
         />
       </Head>
 
@@ -54,7 +54,7 @@ export default function About() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Clay - Gatsby Theme"
+            text="Plataforma de Soluciones Digitales"
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
@@ -64,26 +64,20 @@ export default function About() {
             md:col-span-8"
             >
               <h2 className="mb-4 text-2xl font-bold capitalize text-dark/75 dark:text-light/75">
-                Unlocking the Power of Gatsby v5+ & NetlifyCMS with Clay Theme.
+                Desarrollo de una plataforma integral para empresas y emprendedores digitales.
               </h2>
               <h3 className="mb-4 text-lg font-bold  text-lightGreen dark:text-primaryDark">
-                Content | Web Design | UX/UI | Development
+                Web | Automatización | E-commerce | Consultoría
               </h3>
               <div classNname="w-full border-2 border-solid border-light bg-light"></div>
               <p className="">
-                Clay es un ejemplo de integración avanzada entre Gatsby y Netlify CMS, ideal para proyectos modernos de contenido y desarrollo web.
+                Plataforma desarrollada para gestionar servicios digitales, automatizar procesos y potenciar la presencia online de negocios. Incluye módulos de administración, integración de pagos y diseño adaptable.
               </p>
               <h4 className="mt-4 text-lg font-800 capitalize text-dark/75 dark:text-light/75">
-                Unleashing the Power of Gatsby Framework
+                Funcionalidades principales
               </h4>
               <p className="my-4">
-                At the heart of Clay lies the robust Gatsby Framework. This
-                innovative framework empowers developers to leverage the latest
-                web technologies, including React, GraphQL, and Webpack. The
-                outcome is nothing short of exceptional—Clay delivers
-                lightning-fast, highly optimized websites, waving goodbye to the
-                era of slow load times and ushering in an age of unparalleled
-                performance.
+                Gestión de usuarios, automatización de tareas, integración de e-commerce, panel de administración y soporte para crecimiento digital.
               </p>
 
               <div className="mt-2 flex items-center grid-cols-8 gap-4 sm:gap-8">
@@ -96,7 +90,7 @@ export default function About() {
                   Visit Demo
                 </Link>
                 <Link
-                  href="https://github.com/lilxyzz/clay-theme"
+                  href="https://github.com/DaniP-Dev/miWeb"
                   target={"_blank"}
                   className="w-10"
                   aria-label="github link"
@@ -104,7 +98,7 @@ export default function About() {
                   <GithubIcon />
                 </Link>
                 <Link
-                  href="https://dev.to/lilxyzz/clay-theme-unlocking-the-power-of-gatsby-v5-and-netlifycms-with-clay-theme-njn"
+                  href="https://dev.to/danipdev"
                   target={"_blank"}
                   className="w-10"
                   aria-label="github link"

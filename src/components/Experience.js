@@ -58,21 +58,21 @@ const Experience = () => {
 
         <ul className="w-full flex flex-col items-start justify-between ml-4 xs:ml-2">
           <Details
-            position="Developer"
-            company="Stellar Innovations"
-            time="2020 - 2024"
-            address="200 Innovations st"
-            companyLink="https://github.com/lilxyzz/clay-theme"
-            work="At Stellar Innovations, I serve as a web developer, where I play a crucial role in designing and implementing cutting-edge web solutions. My responsibilities include developing responsive and high-performance websites and applications using technologies such as HTML, CSS, JavaScript, React, and Node.js. I collaborate closely with cross-functional teams to ensure our projects meet the highest standards of functionality and user experience. One of my key achievements at Stellar Innovations has been leading the development of a comprehensive e-commerce platform that significantly enhanced our client's online presence and sales. My work is driven by a passion for continuous learning and innovation, always striving to push the boundaries of what's possible in web development."
+            position="Desarrollador de Soluciones Digitales"
+            company="Freelance / Proyectos Propios"
+            time="2021 - Actualidad"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Desarrollo de plataformas web, landing pages, tiendas online y automatización de procesos para empresas y emprendedores. Enfoque en soluciones digitales personalizadas y optimización de presencia online."
           />
 
           <Details
-            position="Rad Tester"
-            company="Vault Technologies"
-            time="2018 - 2020"
-            address="404 Tech st"
-            companyLink="https://github.com/lilxyzz/holo-theme"
-            work="At Vault Technologies, I worked as a RAD (Rapid Application Development) Tester, where I was responsible for ensuring the quality and functionality of our software applications during the development process. My role involved designing and executing test plans, identifying and documenting bugs, and working closely with developers to resolve issues quickly. This position required a deep understanding of the software development lifecycle and a keen eye for detail to ensure our applications met the highest standards of performance and reliability. My contributions at Vault Technologies helped streamline our development processes and significantly improved the overall quality of our software products."
+            position="Soporte y Consultoría Digital"
+            company="Clientes Variados"
+            time="2019 - 2021"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Asesoría y soporte en transformación digital, implementación de herramientas web y capacitación en el uso de soluciones digitales para negocios."
           />
         </ul>
       </div>

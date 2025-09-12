@@ -151,7 +151,7 @@ lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4
             href={link}
             className="ml-4 rounded-lg
              bg-dark p-2 px-6 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
+             sm:px-4 sm:text-base border-2 border-solid
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
             md:p-2 md:px-4 md:text-base"
@@ -210,9 +210,7 @@ const Project = ({ title, type, img, link, tools }) => {
         <div className="flex w-full items-center  justify-between">
           <Link
             href={link}
-            className="rounded-lg
-             bg-dark mt-2 px-6 py-2 text-lg font-semibold
-             sm:px-4 sm:text-base rounded-lg border-2 border-solid bg-dark
+            className="rounded-lg bg-dark mt-2 px-6 py-2 text-lg font-semibold sm:px-4 sm:text-base border-2 border-solid
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
             md:p-2 md:px-4 md:text-base
@@ -251,35 +249,35 @@ export default function Projects() {
             <div className="col-span-12">
               <FeaturedProject
                 type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
-                summary="Image-centric Gatsby theme for publishers, portfolio, photographers blogs and more."
+                tools="HTML | CSS | JavaScript | React"
+                title="Proyecto Genérico 1"
+                summary="Descripción breve de un proyecto propio o de ejemplo."
                 img={proj1}
                 date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                link="/projects/proyecto-generico-1"
+                github="https://github.com/DaniP-Dev/miWeb"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
                 type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
+                tools="HTML | CSS | JavaScript | React"
+                title="Proyecto Genérico 2"
                 img={proj1}
                 date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                link="/projects/proyecto-generico-2"
+                github="https://github.com/DaniP-Dev/miWeb"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
                 type="Design & Development"
-                tools="HTML | CSS | JavaScript | Gatsby"
-                title="Clay - Gatsby Theme"
+                tools="HTML | CSS | JavaScript | React"
+                title="Proyecto Genérico 3"
                 img={proj1}
                 date="2023"
-                link="/projects/clay-gatsby-theme"
-                github="https://travislord.xyz/projects/clay-gatsby-theme"
+                link="/projects/proyecto-generico-3"
+                github="https://github.com/DaniP-Dev/miWeb"
               />
             </div>
           </div>
@@ -291,7 +289,7 @@ export default function Projects() {
                 img={loading}
                 time="1 min read"
                 date=""
-                link="https://github.com/lilxyzz/"
+                link="https://github.com/DaniP-Dev/miWeb"
               />
             </ul>
 
