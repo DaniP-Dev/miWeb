@@ -107,10 +107,10 @@ const Navbar = () => {
 
       <div className="w-full flex justify-between items-center lg:hidden">
         <nav className="flex items-center justify-center">
-          <CustomLink className="mr-4" href="/" title="Home" />
-          <CustomLink className="mx-4" href="/about" title="About" />
-          <CustomLink className="mx-4" href="/projects" title="Projects" />
-          <CustomLink className="ml-4" href="/articles" title="Articles" />
+          <CustomLink className="mr-4" href="/" title="Inicio" />
+          <CustomLink className="mx-4" href="/about" title="Sobre mí" />
+          <CustomLink className="mx-4" href="/projects" title="Proyectos" />
+          <CustomLink className="ml-4" href="/articles" title="Crea tu web aquí!" />
         </nav>
         <nav
           className="flex items-center justify-center flex-wrap lg:mt-2
@@ -122,7 +122,7 @@ const Navbar = () => {
             href="https://github.com/DaniP-Dev/miWeb"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Checkout my GitHub profile"
+            aria-label="Ver mi perfil de GitHub"
           >
             <GithubIcon />
           </motion.a>
@@ -133,7 +133,7 @@ const Navbar = () => {
             href="https://medium.com/@travis.lord"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Checkout my Medium profile"
+            aria-label="Ver mi perfil de Medium"
           >
             <MediumIcon />
           </motion.a>
@@ -144,7 +144,7 @@ const Navbar = () => {
             href="https://dev.to/danipdev"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Checkout my Dev.to profile"
+            aria-label="Ver mi perfil de Dev.to"
           >
             <DevIcon />
           </motion.a>
@@ -155,7 +155,7 @@ const Navbar = () => {
             href="https://dev.to/danipdev"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="My Dev.to profile"
+            aria-label="Mi perfil de Dev.to"
           ></motion.a>
 
           <button
@@ -187,31 +187,31 @@ const Navbar = () => {
               toggle={handleClick}
               className="mr-4 lg:m-0 lg:my-2"
               href="/"
-              title="Home"
+              title="Inicio"
             />
             <CustomMobileLink
               toggle={handleClick}
               className="mx-4 lg:m-0 lg:my-2"
               href="/about"
-              title="About"
+              title="Sobre mí"
             />
             <CustomMobileLink
               toggle={handleClick}
               className="mx-4 lg:m-0 lg:my-2"
               href="/projects"
-              title="Projects"
+              title="Proyectos"
             />
             <CustomMobileLink
               toggle={handleClick}
               className="ml-4 lg:m-0 lg:my-2"
               href="/articles"
-              title="Articles"
+              title="Crea tu web aquí!"
             />
             <CustomMobileLink
               toggle={handleClick}
               className="ml-4 lg:m-0 lg:my-2"
               href="/contact"
-              title="Contact"
+              title="Contacto"
             />
           </nav>
           <nav

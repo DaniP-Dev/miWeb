@@ -37,24 +37,43 @@ const Skills = () => {
       >
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="cursor-default flex rounded-full font-semibold bg-dark text-light px-6 py-7 shadow-dark
+          className="cursor-default flex flex-col items-center rounded-full font-semibold bg-dark text-light px-8 py-8 shadow-dark
         dark:bg-light dark:text-dark lg:p-6 md:p-4 xs:text-xs xs:p-2
         "
         >
-          Web
+          <span>Web</span>
+          <span>Servidores</span>
+          <span>Apps</span>
+          <span>eCommerce</span>
+          <span>Automatización</span>
         </motion.div>
 
-        <Skill name="HTML" x="-20vw" y="2vw" />
+        {/* Primera órbita: frameworks principales */}
+        <Skill name="Next.js" x="-18vw" y="-12vw" />
+        <Skill name="Laravel" x="0vw" y="-18vw" />
+        <Skill name="Flutter" x="18vw" y="-12vw" />
+        <Skill name="WordPress" x="-18vw" y="12vw" />
+        <Skill name="Shopify" x="18vw" y="12vw" />
+
+        {/* Segunda órbita: backend y bases de datos */}
+        <Skill name="PHP" x="-28vw" y="-5vw" />
+        <Skill name="CodeIgniter" x="-10vw" y="-20vw" />
+        <Skill name="SQL" x="0vw" y="20vw" />
+        <Skill name="phpMyAdmin" x="28vw" y="-5vw" />
+        <Skill name="Firebase" x="10vw" y="-20vw" />
+
+        {/* Tercera órbita: frontend y herramientas */}
+        <Skill name="JavaScript" x="-25vw" y="18vw" />
+        <Skill name="TSX" x="-10vw" y="20vw" />
+        <Skill name="HTML" x="-32vw" y="8vw" />
+        <Skill name="CSS" x="32vw" y="8vw" />
         <Skill name="Tailwind" x="-5vw" y="-10vw" />
-        <Skill name="JavaScript" x="20vw" y="6vw" />
-        <Skill name="TypeScript" x="0vw" y="12vw" />
-        <Skill name="Next.js" x="-20vw" y="-15vw" />
-        <Skill name="Gatsby" x="15vw" y="-12vw" />
-        <Skill name="Git" x="-35vw" y="-5vw" />
-        <Skill name="UI / UX" x="32vw" y="-5vw" />
-        <Skill name="Node.js" x="0vw" y="-20vw" />
-        <Skill name="React" x="-25vw" y="18vw" />
-        <Skill name="Framer Motion" x="28vw" y="18vw" />
+        <Skill name="Bootstrap" x="20vw" y="18vw" />
+        <Skill name="Librerías CSS" x="10vw" y="20vw" />
+
+        {/* Cuarta órbita: devops y otros */}
+        <Skill name="Servidores" x="35vw" y="-15vw" />
+        <Skill name="Dart" x="-35vw" y="-15vw" />
       </div>
     </>
   );

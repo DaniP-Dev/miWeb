@@ -132,78 +132,129 @@ export default function Articles() {
   return (
     <>
       <Head>
-        <title>Artículos de Desarrollo | DaniDev</title>
+        <title>Soluciones Digitales para tu Negocio | DaniDev</title>
         <meta
           name="description"
-          content="Artículos y recursos de DaniDev sobre desarrollo web, apps, WordPress y Shopify."
+          content="Servicios digitales para empresas y emprendedores: desarrollo web, tiendas online, automatización, consultoría y arreglos rápidos (botones, colores, cambios pequeños). Paquetes a medida y soluciones express para tu negocio sin complicaciones técnicas."
         />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Soluciones Digitales para tu Negocio | DaniDev" />
+  <meta property="og:description" content="Servicios digitales para empresas y emprendedores: desarrollo web, tiendas online, automatización, consultoría y arreglos rápidos (botones, colores, cambios pequeños). Paquetes a medida y soluciones express para tu negocio sin complicaciones técnicas." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tu-dominio.com/articles" />
+        <meta property="og:image" content="https://tu-dominio.com/images/NexTemp-cover.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Soluciones Digitales para tu Negocio | DaniDev" />
+  <meta name="twitter:description" content="Servicios digitales para empresas y emprendedores: desarrollo web, tiendas online, automatización, consultoría y arreglos rápidos (botones, colores, cambios pequeños). Paquetes a medida y soluciones express para tu negocio sin complicaciones técnicas." />
+        <meta name="twitter:image" content="https://tu-dominio.com/images/NexTemp-cover.png" />
+        <meta name="author" content="DaniDev" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'DaniDev',
+          description: 'Servicios digitales para empresas y emprendedores: desarrollo web, tiendas online, automatización, consultoría y arreglos rápidos (botones, colores, cambios pequeños). Paquetes a medida y soluciones express para tu negocio sin complicaciones técnicas.',
+          url: 'https://tu-dominio.com/articles',
+          image: 'https://tu-dominio.com/images/NexTemp-cover.png',
+          sameAs: [
+            'https://github.com/DaniP-Dev',
+            'https://www.linkedin.com/in/danip-dev/'
+          ],
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Ciudad',
+            addressCountry: 'País'
+          },
+          contactPoint: {
+            '@type': 'ContactPoint',
+            contactType: 'customer support',
+            email: 'contacto@tu-dominio.com'
+          }
+        }) }} />
       </Head>
       <TransitionEffect />
       <main
         className={`w-full mb-16 flex flex-col items-center justify-center dark:text-light overflow-hidden`}
       >
         <Layout className="pt-16">
-          <AnimatedText
-            text="Words Influence the World 🌎"
-            className="!text-8xl !leading-tight mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
-          />
-          <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
-            <FeaturedArticle
-              img={blog1}
-              title="Unlocking the Power of Gatsby & Netlify"
-              time="2 min read"
-              summary="Image-centric Gatsby theme for publishers, portfolio, photographers blogs and more."
-              link="https://travislord.xyz/articles/guide-to-clay-theme-gatsby-web-app"
+            <AnimatedText
+              text="Soluciones Digitales para tu Negocio"
+              className="!text-8xl !leading-tight mb-16 lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
             />
+            <ul className="grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16">
+              <FeaturedArticle
+                img={blog1}
+                title="Sitio Web Profesional"
+                time="Desde $500 USD"
+                summary="Ideal para negocios que necesitan presencia online. Incluye diseño personalizado, optimización SEO básica y contacto directo."
+                link="/contact"
+              />
 
-            <FeaturedArticle
-              img={blog2}
-              title="My MacBook Setup For Development 2024"
-              time="4 min read"
-              summary="As we step into another year of exciting journeys, I figured it was the perfect moment to unveil the newest adjustments and tools I'm using in my MacBook setup."
-              link="https://travislord.xyz/articles/top-macbook-setup-tips-for-2024"
-            />
-          </ul>
+              <FeaturedArticle
+                img={blog2}
+                title="Tienda Online Completa"
+                time="Desde $900 USD"
+                summary="Lanza tu e-commerce con todo lo necesario: catálogo, pagos, envíos y soporte. Integración con Shopify o WooCommerce."
+                link="/contact"
+              />
+            </ul>
 
-          <h2 className="font-bold text-4xl w-full text-center mt-32 my-16">
-            All Articles
-          </h2>
 
-          <ul className="flex flex-col items-center relative">
-            <Article
-              title="Adding more soon, thanks for the interest!"
-              img={loading}
-              time="1 min read"
-              date=""
-              link="https://github.com/DaniP-Dev/miWeb"
-            />
-          </ul>
+            <h2 className="font-bold text-4xl w-full text-center mt-32 my-16">
+              Paquetes y Servicios
+            </h2>
+            <p className="text-lg text-center max-w-2xl mx-auto mb-8">
+              ¿Solo necesitas arreglar un botón, cambiar un color o hacer un ajuste rápido en tu web? También ofrezco soluciones express para cambios pequeños y puntuales, sin complicaciones.
+            </p>
 
-          <div className="mt-2 flex items-center justify-between gap-3 grid-cols-2">
-            <Link
-              href="/about/"
-              target={"_self"}
-              className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
-            capitalize text-dark hover:border-light hover:bg-dark hover:text-light 
-            dark:bg-dark dark:text-light dark:hover:bg-light dark:hover:text-dark
-            md:p-2 md:px-4 md:text-base
-             `}
-            >
-              Get To Know Me
-            </Link>
-            <Link
-              href="/projects/"
-              target={"_self"}
-              className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
-            capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
-            dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
-            md:p-2 md:px-4 md:text-base
-             `}
-            >
-              View Projects
-            </Link>
-          </div>
-          <HireMe2 />
+            <ul className="flex flex-col items-center relative">
+              <Article
+                title="Arreglo Rápido: Botones, Colores y Más"
+                img={loading}
+                time="Desde $30 USD"
+                date=""
+                link="/contact"
+              />
+              <Article
+                title="Automatización de Procesos Empresariales"
+                img={loading}
+                time="Desde $300 USD"
+                date=""
+                link="/contact"
+              />
+              <Article
+                title="Consultoría y Asesoría Digital"
+                img={loading}
+                time="Desde $100 USD/hora"
+                date=""
+                link="/contact"
+              />
+            </ul>
+
+            <div className="mt-2 flex items-center justify-between gap-3 grid-cols-2">
+              <Link
+                href="/about/"
+                target={"_self"}
+                className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
+              capitalize text-dark hover:border-light hover:bg-dark hover:text-light 
+              dark:bg-dark dark:text-light dark:hover:bg-light dark:hover:text-dark
+              md:p-2 md:px-4 md:text-base
+               `}
+              >
+                Perfil Técnico
+              </Link>
+              <Link
+                href="/projects/"
+                target={"_self"}
+                className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
+              capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
+              dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
+              md:p-2 md:px-4 md:text-base
+               `}
+              >
+                Ver Proyectos
+              </Link>
+            </div>
+            <HireMe2 />
         </Layout>
       </main>
     </>

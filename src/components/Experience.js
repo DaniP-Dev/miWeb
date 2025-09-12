@@ -44,6 +44,63 @@ const Experience = () => {
   });
 
   return (
+    <>
+      {/* SEO: Lista oculta de roles y tecnologías */}
+      <ul className="sr-only">
+        <li>Administrador de Servidores y Hosting</li>
+        <li>Especialista en WordPress & Avada</li>
+        <li>Desarrollador Shopify CLI & eCommerce</li>
+        <li>Desarrollador Next.js & React</li>
+        <li>Desarrollador Flutter & Apps Móviles</li>
+        <li>Desarrollador de Soluciones Digitales</li>
+        <li>Soporte y Consultoría Digital</li>
+        <li>Linux, WordPress, Avada, Shopify CLI, Next.js, React, Tailwind CSS, Flutter, Dart, Firebase, APIs, DevOps</li>
+      </ul>
+      {/* SEO: JSON-LD WorkExperience */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'DaniDev',
+          hasOccupation: [
+            {
+              '@type': 'Occupation',
+              name: 'Administrador de Servidores y Hosting',
+              description: 'Administración de servidores Linux, hosting, instalación y configuración de sitios WordPress, gestión de dominios y certificados SSL.'
+            },
+            {
+              '@type': 'Occupation',
+              name: 'Especialista en WordPress & Avada',
+              description: 'Implementación y personalización de sitios web con WordPress y el tema Avada, optimización SEO y soporte.'
+            },
+            {
+              '@type': 'Occupation',
+              name: 'Desarrollador Shopify CLI & eCommerce',
+              description: 'Desarrollo y personalización de tiendas Shopify usando Shopify CLI, integración de pagos y automatización.'
+            },
+            {
+              '@type': 'Occupation',
+              name: 'Desarrollador Next.js & React',
+              description: 'Creación de aplicaciones web modernas y escalables con Next.js, React y Tailwind CSS.'
+            },
+            {
+              '@type': 'Occupation',
+              name: 'Desarrollador Flutter & Apps Móviles',
+              description: 'Desarrollo de apps móviles multiplataforma con Flutter y Dart, integración de Firebase y despliegue en tiendas.'
+            },
+            {
+              '@type': 'Occupation',
+              name: 'Desarrollador de Soluciones Digitales',
+              description: 'Desarrollo de plataformas web, landing pages, tiendas online y automatización de procesos.'
+            },
+            {
+              '@type': 'Occupation',
+              name: 'Soporte y Consultoría Digital',
+              description: 'Asesoría y soporte en transformación digital, herramientas web y capacitación.'
+            }
+          ]
+        }
+      ]) }} />
     <div className="my-64">
       <h2 className="font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16">
         Experience
@@ -74,6 +131,51 @@ const Experience = () => {
             companyLink="https://github.com/DaniP-Dev/miWeb"
             work="Asesoría y soporte en transformación digital, implementación de herramientas web y capacitación en el uso de soluciones digitales para negocios."
           />
+
+          <Details
+            position="Administrador de Servidores y Hosting"
+            company="Clientes Freelance"
+            time="2020 - Actualidad"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Administración de servidores Linux y paneles de hosting, instalación y configuración de múltiples sitios WordPress para clientes, gestión de dominios, certificados SSL y optimización de recursos."
+          />
+
+          <Details
+            position="Especialista en WordPress & Avada"
+            company="Empresas y Emprendedores"
+            time="2019 - Actualidad"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Implementación de sitios web profesionales usando el tema Avada, personalización avanzada, optimización de velocidad y SEO, integración de plugins y soporte continuo para clientes."
+          />
+
+          <Details
+            position="Desarrollador Shopify CLI & eCommerce"
+            company="Tienda Online Propia y Clientes"
+            time="2021 - Actualidad"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Desarrollo y personalización de tiendas Shopify usando Shopify CLI, integración de pasarelas de pago, automatización de procesos y soporte técnico para negocios digitales."
+          />
+
+          <Details
+            position="Desarrollador Next.js & React"
+            company="Proyectos Propios y Freelance"
+            time="2022 - Actualidad"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Creación de aplicaciones web modernas y escalables con Next.js, React y Tailwind CSS. Implementación de SSR, SSG, APIs y despliegue en Vercel y servidores propios."
+          />
+
+          <Details
+            position="Desarrollador Flutter & Apps Móviles"
+            company="Proyectos Personales"
+            time="2023 - Actualidad"
+            address="Remoto"
+            companyLink="https://github.com/DaniP-Dev/miWeb"
+            work="Desarrollo de aplicaciones móviles multiplataforma con Flutter y Dart, integración de Firebase, autenticación y despliegue en Google Play y App Store."
+          />
         </ul>
       </div>
       <div className="mt-40 flex items-center justify-between gap-3 grid-cols-2">
@@ -86,7 +188,7 @@ const Experience = () => {
             md:p-2 md:px-4 md:text-base
              `}
         >
-          View Projects
+          Ver Proyectos
         </Link>
         <Link
           href="/articles/"
@@ -97,10 +199,11 @@ const Experience = () => {
             md:p-2 md:px-4 md:text-base
              `}
         >
-          View Articles
+          Ver Artículos
         </Link>
       </div>
     </div>
+    </>
   );
 };
 

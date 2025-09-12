@@ -13,7 +13,7 @@ export const HireMe = () => {
         <Image
           priority={false}
           src={CText}
-          alt="HireMe image"
+          alt="Imagen HireMe"
           height={160}
           width={160}
           className={"fill-dark dark:fill-light animate-spin-slow duration-200"}
@@ -21,12 +21,9 @@ export const HireMe = () => {
 
         <Link
           href="/contact"
-          className="flex items-center justify-center absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] border border-solid
-bg-dark rounded-full text-white w-16 h-16 text-[14px] font-semibold hover:bg-light hover:border-dark hover:text-dark dark:text-dark dark:bg-light dark:hover:bg-dark
-dark:hover:text-light dark:hover:border-light  md:w-12 md:h-12 md:text-[10px]
-"
+          className="flex items-center justify-center absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] border border-solid bg-dark rounded-full text-white w-16 h-16 text-[14px] font-semibold hover:bg-light hover:border-dark hover:text-dark dark:text-dark dark:bg-light dark:hover:bg-dark dark:hover:text-light dark:hover:border-light  md:w-12 md:h-12 md:text-[10px]"
         >
-          Let's Go
+          ¡Vamos!
         </Link>
       </div>
     </div>

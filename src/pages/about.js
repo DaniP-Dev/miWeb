@@ -39,10 +39,80 @@ export default function About() {
     <>
       <Head>
         <title>Sobre DaniDev | Portfolio y Experiencia</title>
-        <meta
-          name="description"
-          content="Conoce a DaniDev: experiencia, habilidades y proyectos en desarrollo web, apps, WordPress y Shopify."
-        />
+        <meta name="description" content="Conoce a DaniDev: experiencia, habilidades, proyectos y servicios en desarrollo web, apps, servidores, WordPress, Shopify, automatización y más." />
+        <meta name="keywords" content="DaniDev, desarrollador web, portfolio, experiencia, Next.js, Laravel, Flutter, WordPress, Shopify, PHP, CodeIgniter, SQL, Firebase, JavaScript, TSX, HTML, CSS, Tailwind, Bootstrap, automatización, servidores, ecommerce, habilidades, proyectos" />
+        <meta name="author" content="DaniDev" />
+        <link rel="canonical" href="https://tu-dominio.com/about" />
+        <meta property="og:title" content="Sobre DaniDev | Portfolio y Experiencia" />
+        <meta property="og:description" content="Conoce a DaniDev: experiencia, habilidades, proyectos y servicios en desarrollo web, apps, servidores, WordPress, Shopify, automatización y más." />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://tu-dominio.com/about" />
+        <meta property="og:image" content="https://tu-dominio.com/images/profile/Riley.png" />
+        <meta property="og:locale" content="es_ES" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sobre DaniDev | Portfolio y Experiencia" />
+        <meta name="twitter:description" content="Conoce a DaniDev: experiencia, habilidades, proyectos y servicios en desarrollo web, apps, servidores, WordPress, Shopify, automatización y más." />
+        <meta name="twitter:image" content="https://tu-dominio.com/images/profile/Riley.png" />
+        <meta name="twitter:site" content="@tu_usuario" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta httpEquiv="Content-Language" content="es" />
+        <link rel="alternate" href="https://tu-dominio.com/about" hrefLang="es" />
+        {/* SEO Skills: lista oculta para buscadores */}
+        <ul className="sr-only">
+          <li>Next.js</li>
+          <li>Laravel</li>
+          <li>Flutter</li>
+          <li>WordPress</li>
+          <li>Shopify</li>
+          <li>PHP</li>
+          <li>CodeIgniter</li>
+          <li>SQL</li>
+          <li>phpMyAdmin</li>
+          <li>Firebase</li>
+          <li>JavaScript</li>
+          <li>TSX</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Tailwind</li>
+          <li>Bootstrap</li>
+          <li>Librerías CSS</li>
+          <li>Servidores</li>
+          <li>Dart</li>
+        </ul>
+        {/* SEO Skills: JSON-LD structured data ampliado */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'DaniDev',
+            alternateName: 'Daniel Developer',
+            url: 'https://tu-dominio.com/about',
+            image: 'https://tu-dominio.com/images/profile/Riley.png',
+            sameAs: [
+              'https://github.com/DaniP-Dev',
+              'https://www.linkedin.com/in/danip-dev/'
+            ],
+            jobTitle: 'Desarrollador Web Full Stack',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Freelance'
+            },
+            knowsAbout: [
+              'Next.js', 'Laravel', 'Flutter', 'WordPress', 'Shopify', 'PHP', 'CodeIgniter', 'SQL', 'phpMyAdmin', 'Firebase',
+              'JavaScript', 'TSX', 'HTML', 'CSS', 'Tailwind', 'Bootstrap', 'Librerías CSS', 'Servidores', 'Dart', 'Automatización', 'eCommerce'
+            ],
+            description: 'Desarrollador web y de aplicaciones con experiencia en servidores, automatización, WordPress, Shopify y tecnologías modernas.',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Ciudad',
+              addressCountry: 'País'
+            },
+            email: 'contacto@tu-dominio.com',
+            alumniOf: 'Universidad o formación',
+            gender: 'male',
+            nationality: 'País'
+          })
+        }} />
       </Head>
 
       <TransitionEffect />
@@ -51,7 +121,7 @@ export default function About() {
       >
         <Layout className="pt-16">
           <AnimatedText
-            text="Let Passion Lead Your Purpose 🔥"
+            text="Transformo ideas en soluciones digitales que impactan"
             className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:!text-6xl xs:!text-4xl sm:mb-8"
           />
 
@@ -61,30 +131,17 @@ export default function About() {
             md:col-span-8"
             >
               <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75">
-                BIOGRAPHY
+                SOBRE MÍ
               </h2>
               <p className="font-medium ">
-                I'm Riley, a dedicated web developer at Stellar Innovations,
-                where I specialize in creating dynamic and user-centric web
-                experiences. With over a decade of experience in the industry, I
-                have honed my skills in both front-end and back-end
-                technologies, allowing me to deliver responsive and
-                high-performance websites and applications.
+                Soy Daniel, Desarrollador web full-stack con un enfoque fuerte en inteligencia artificial, especializado en tecnologías modernas como Next.js, React y Laravel para construir aplicaciones escalables, seguras y de alto rendimiento. Poseo amplia experiencia tanto en frontend avanzado con React, Tailwind CSS y Bootstrap, como en backend con Laravel, FastAPI, Python, y bases de datos SQL, NoSQL y Firebase.
               </p>
               <p className="my-4 font-medium">
-                At Stellar Innovations, I've had the opportunity to work on
-                numerous high-profile projects that have challenged and expanded
-                my expertise. My technical skill set includes HTML, CSS,
-                JavaScript, React, and Node.js, among other technologies. One of
-                my notable projects involved developing a comprehensive
-                e-commerce platform that streamlined the user experience and
-                significantly boosted the client's sales. Another project I’m
-                particularly proud of was creating an interactive web
-                application for a major event, which received widespread acclaim
-                for its intuitive design and seamless performance.
+                He liderado proyectos completos que integran autenticación, APIs GraphQL, bases de datos en tiempo real y funciones en la nube, brindando soluciones eficientes y robustas. Mi versatilidad me permite abordar desafíos complejos con lógica algorítmica y desarrollar código optimizado tanto para interfaces ricas como para servicios backend.
+                Complemento mis capacidades técnicas con habilidades en DevOps, manejo avanzado de Git y uso básico de Docker, asegurando así la estabilidad y calidad en entornos de desarrollo y producción.
               </p>
               <p className="my-4 font-medium">
-                P.s I'm a big fan of anime and not a real person ✌️.
+                Actualmente trabajo como freelancer, aportando soluciones digitales innovadoras y escalables que potencian a startups y empresas tecnológicas. Mi objetivo es seguir creciendo profesionalmente, fusionando inteligencia artificial con desarrollo web para crear productos disruptivos que generen valor real al usuario y al negocio.
               </p>
             </div>
             <div
@@ -120,7 +177,7 @@ export default function About() {
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
-                  Days of Coding
+                  Días creando soluciones
                 </h3>
               </div>
 
@@ -132,7 +189,7 @@ export default function About() {
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
-                  Bugs Made
+                  Funcionalidades
                 </h3>
               </div>
 
@@ -144,7 +201,7 @@ export default function About() {
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
-                  Bugs Crushed
+                  Errores resueltos
                 </h3>
               </div>
             </div>

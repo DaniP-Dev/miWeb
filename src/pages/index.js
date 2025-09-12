@@ -1,7 +1,7 @@
 import AnimatedText from "@/components/AnimatedText";
 import { HireMe } from "@/components/HireMe";
 import Layout from "@/components/Layout";
-import Head from "next/head";
+import SEO from "@/components/SEO";
 import Image from "next/image";
 import Link from "next/link";
 import TransitionEffect from "@/components/TransitionEffect";
@@ -10,13 +10,57 @@ import profilePic from "../../public/images/profile/Riley.png";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>DaniDev | Desarrollo Web y Apps</title>
-        <meta
-          name="description"
-          content="Portfolio, servicios y artículos de DaniDev: desarrollo web, apps, WordPress y Shopify."
+
+      <SEO
+        metadata={{
+          title: {
+            default: "DaniDev | Desarrollo Web y Apps"
+          },
+          description: "Portfolio, servicios y artículos de DaniDev: desarrollo web, apps, WordPress y Shopify.",
+          openGraph: {
+            title: "DaniDev | Desarrollo Web y Apps",
+            description: "Portfolio, servicios y artículos de DaniDev: desarrollo web, apps, WordPress y Shopify.",
+            type: "website",
+            url: "https://tu-dominio.com",
+            images: ["https://tu-dominio.com/imagen-og.png"]
+          },
+          twitter: {
+            card: "summary_large_image",
+            title: "DaniDev | Desarrollo Web y Apps",
+            description: "Portfolio, servicios y artículos de DaniDev: desarrollo web, apps, WordPress y Shopify.",
+            images: ["https://tu-dominio.com/imagen-twitter.png"]
+          },
+          robots: {
+            index: true,
+            follow: true
+          },
+          verification: {
+            google: "GOOGLE_VERIFICATION_TOKEN",
+            bing: "BING_VERIFICATION_TOKEN",
+            brave: "BRAVE_VERIFICATION_TOKEN"
+          }
+        }}
+      >
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="UTF-8" />
+        {/* Datos estructurados JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "DaniDev",
+              url: "https://tu-dominio.com",
+              sameAs: [
+                "www.linkedin.com/in/danielpe971223",
+                "https://github.com/DaniP-Dev",
+                "https://x.com/Danipe_23"
+              ]
+            })
+          }}
         />
-      </Head>
+      </SEO>
 
       <TransitionEffect />
       <article
@@ -37,22 +81,19 @@ export default function Home() {
                 />
               }
             </div>
-            <div className="flex w-1/2 flex-col items-center self-center lg:w-full lg:text-center">
+            <div className="flex w-1/2 flex-col self-center lg:w-full lg:text-center">
               <AnimatedText
-                text="Hey, I’m Riley"
+                text="¡Hola! Soy DaniDev"
                 className="!text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
               />
-              <div className="flex w-1/2 w-full items-center items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
+              <div className="flex w-full items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
                 <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-5xl xl:!text-4xl lg:!text-4xl md:!text-5xl sm:!text-3xl">
-                  I create engaging web experiences.
+                  Desarrollo soluciones digitales a tu medida.
                 </h2>
               </div>
 
               <p className="my-4 text-base font-medium md:text-sm sm:!text-sm">
-                I'm a front-end web developer at Stellar Innovations, passionate
-                about creating dynamic and user-friendly web experiences. With a
-                keen eye for design and a robust understanding of front-end and
-                back-end technologies.
+                Soy desarrollador web full-stack especializado en crear sitios, apps y tiendas online modernas, rápidas y seguras. Ayudo a empresas y emprendedores a potenciar su presencia digital con tecnología de vanguardia, automatización y diseño profesional.
               </p>
               <div className="mt-2 flex items-center self-start gap-3 grid-cols-2 lg:self-center">
                 <Link
@@ -64,7 +105,7 @@ export default function Home() {
             md:p-2 md:px-4 md:text-base
              `}
                 >
-                  Get To Know Me
+                  Sobre mí
                 </Link>
                 <Link
                   href="/projects/"
@@ -75,7 +116,7 @@ export default function Home() {
             md:p-2 md:px-4 md:text-base
              `}
                 >
-                  projects
+                  Proyectos
                 </Link>
               </div>
             </div>
