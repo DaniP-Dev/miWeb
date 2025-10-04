@@ -3,7 +3,17 @@ import React from "react";
 import Image from "next/image";
 import CText from "../../public/images/CircularText.png";
 
+import { useRouter } from "next/router";
+
 export const HireMe = () => {
+  const router = useRouter();
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    await router.push("/contact");
+    window.open("https://wa.me/573016328564", "_blank");
+  };
+
   return (
     <div
       className="fixed left-4 bottom-4 flex flex-col items-center justify-center md:right-8 sm:right-0 
@@ -19,12 +29,13 @@ export const HireMe = () => {
           className={"fill-dark dark:fill-light animate-spin-slow duration-200"}
         />
 
-        <Link
+        <a
           href="/contact"
+          onClick={handleClick}
           className="flex items-center justify-center absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] border border-solid bg-dark rounded-full text-white w-16 h-16 text-[14px] font-semibold hover:bg-light hover:border-dark hover:text-dark dark:text-dark dark:bg-light dark:hover:bg-dark dark:hover:text-light dark:hover:border-light  md:w-12 md:h-12 md:text-[10px]"
         >
           ¡Vamos!
-        </Link>
+        </a>
       </div>
     </div>
   );

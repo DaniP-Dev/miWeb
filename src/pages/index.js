@@ -72,7 +72,7 @@ export default function Home() {
               {
                 <Image
                   priority={true}
-                  src={profilePic}
+                  src="/logo.png"
                   alt="image"
                   className="h-auto w-100"
                   height={340}
