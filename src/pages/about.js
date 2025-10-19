@@ -189,7 +189,7 @@ export default function About() {
                   className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
                 xl:text-center md:text-lg sm:text-base xs:text-sm"
                 >
-                  Funcionalidades
+                  Funcionalidades prueba de cambios
                 </h3>
               </div>
 

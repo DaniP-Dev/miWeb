@@ -1,8 +1,10 @@
 /** @type {import('next-sitemap').IConfig} */
+const { execSync } = require('child_process');
+
 module.exports = {
   siteUrl: process.env.SITE_URL || "https://daniprograma.vercel.app",
   generateRobotsTxt: true, // Genera robots.txt automáticamente
-  generateIndexSitemap: true, // Genera sitemap index
+  generateIndexSitemap: false, // NO generar índice - sitemap directo
   
   // Configuración optimizada para GSC
   changefreq: 'daily',
@@ -54,8 +56,10 @@ module.exports = {
         crawlDelay: 1,
       }
     ],
+    // No incluir aquí el sitemap principal (evita referencias circulares)
     additionalSitemaps: [
-      `${process.env.SITE_URL || "https://daniprograma.vercel.app"}/sitemap.xml`,
+      // Agrega aquí sitemaps externos si los tienes, p. ej.:
+      // 'https://otrodominio.com/sitemap.xml'
     ],
     // Agregar comentarios informativos al robots.txt
     transformRobotsTxt: async (_, robotsTxt) => {
@@ -86,8 +90,44 @@ Sitemap: ${process.env.SITE_URL || "https://daniprograma.vercel.app"}/sitemap.xm
     ]
   },
 
-  // Transformar URLs para optimización SEO
+  // Transformar URLs para optimización SEO con fechas desde Git
   transform: async (config, path) => {
+    // Función para obtener la última modificación desde Git
+    const getLastModFromGit = (urlPath) => {
+      try {
+        // Mapear rutas URL a archivos reales del proyecto
+        const fileMap = {
+          '/': 'src/pages/index.js',
+          '/about': 'src/pages/about.js',
+          '/projects': 'src/pages/projects.js',
+          '/articles': 'src/pages/articles.js',
+          '/contact': 'src/pages/contact.js',
+          '/projects/clay-gatsby-theme': 'src/pages/projects/clay-gatsby-theme.js',
+        };
+
+        const actualFile = fileMap[urlPath] || 'src/pages/index.js';
+        
+        // Comando Git para obtener la última modificación del archivo
+        const gitCommand = `git log -1 --format=%cI "${actualFile}" 2>nul || echo ""`;
+        const lastCommitDate = execSync(gitCommand, { 
+          encoding: 'utf8', 
+          cwd: process.cwd(),
+          stdio: ['pipe', 'pipe', 'ignore'] // Suprimir errores en stderr
+        }).trim();
+        
+        // Si Git devuelve una fecha válida, usarla; sino usar fecha actual
+        if (lastCommitDate && lastCommitDate !== '') {
+          return lastCommitDate;
+        } else {
+          // Fallback: usar fecha actual si no hay commits para el archivo
+          return new Date().toISOString();
+        }
+      } catch (error) {
+        console.warn(`⚠️  No se pudo obtener fecha Git para ${urlPath}. Usando fecha actual.`);
+        return new Date().toISOString(); // Fallback seguro
+      }
+    };
+
     // Configuraciones específicas por ruta
     const customConfig = {
       '/': {
@@ -117,11 +157,13 @@ Sitemap: ${process.env.SITE_URL || "https://daniprograma.vercel.app"}/sitemap.xm
       priority: 0.7,
     }
 
+    // Asegurar loc absoluto para evitar URLs que empiecen con "//"
+    const loc = new URL(path, config.siteUrl).toString();
     return {
-      loc: path, // URL de la página
+      loc, // URL absoluta de la página
       changefreq: routeConfig.changefreq,
       priority: routeConfig.priority,
-      lastmod: new Date().toISOString(),
+      lastmod: getLastModFromGit(path), // ✅ Fecha real desde Git
     }
   },
 };

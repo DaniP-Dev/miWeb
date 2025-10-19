@@ -1,6 +1,6 @@
 # Robots.txt para https://daniprograma.vercel.app
 # Generado automáticamente por next-sitemap
-# Última actualización: 2025-10-04
+# Última actualización: 2025-10-19
 
 # *
 User-agent: *
