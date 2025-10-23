@@ -1,44 +1,12 @@
-# Robots.txt para https://daniprograma.vercel.app
-# Generado automáticamente por next-sitemap
-# Última actualización: 2025-10-19
-
 # *
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
-Disallow: /.env*
-Disallow: /private/
-Disallow: *?utm_*
-Disallow: *?ref=*
-Crawl-delay: 1
-
-# Googlebot
-User-agent: Googlebot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-
-# Bingbot
-User-agent: Bingbot
-Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-Crawl-delay: 1
 
 # Host
 Host: https://daniprograma.vercel.app
 
 # Sitemaps
 Sitemap: https://daniprograma.vercel.app/sitemap.xml
-
-
-# Sitemap principal
-Sitemap: https://daniprograma.vercel.app/sitemap.xml
-
-# Información adicional
-# Este sitio web es desarrollado por DaniDev
-# Para más información sobre el rastreo, contacta: danidev@tusitio.com
