@@ -1,0 +1,306 @@
+/* CSS Module - Encapsulado para CardStyleServices */
+
+.article {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.sectionWrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 20px;
+}
+
+.boxes {
+	width: 100%;
+	max-width: 1265px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 25px 0;
+}
+
+.boxes ul {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	row-gap: 25px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.boxes li {
+	width: calc((100% / 3) - 10px);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 25px;
+	border-radius: 8px;
+	z-index: 1;
+	overflow: visible;
+	margin: 0;
+}
+
+.cardItem {
+	width: calc((100% / 3) - 10px);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 25px;
+	border-radius: 8px;
+	z-index: 1;
+	overflow: visible;
+	margin: 0;
+}
+
+.cardItem:nth-child(1) {
+	--cardAccent: #3f9f47;
+}
+
+.cardItem:nth-child(2) {
+	--cardAccent: #ff3636;
+}
+
+.cardItem:nth-child(3) {
+	--cardAccent: #00a9ff;
+}
+
+.cardItem::after {
+	position: absolute;
+	width: calc(100% - 50px);
+	height: calc(100% - 50px);
+	z-index: -2;
+	border-radius: 8px;
+	background-color: black;
+	filter: drop-shadow(0px 0px 35px var(--cardAccent)) hue-rotate(0deg);
+	content: "";
+}
+
+.cardItem:nth-child(1)::after {
+	animation: hueRotateSpecial 7s linear infinite reverse;
+}
+
+.cardItem:nth-child(2)::after {
+	animation: hueRotateSpecial 9s linear infinite;
+}
+
+.cardItem:nth-child(3)::after {
+	animation: hueRotateSpecial 5s linear infinite alternate-reverse;
+}
+
+@keyframes hueRotateSpecial {
+	to {
+		filter: drop-shadow(0px 0px 35px var(--cardAccent)) hue-rotate(360deg);
+	}
+}
+
+.cardItem svg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.cardItem:nth-child(1) svg {
+	stroke-dasharray: 331 66;
+	animation: dash 7s linear infinite reverse;
+}
+
+.cardItem:nth-child(2) svg {
+	stroke-dasharray: 307 131;
+	animation: dash2 9s linear infinite;
+}
+
+.cardItem:nth-child(3) svg {
+	stroke-dasharray: 309 154;
+	animation: dash3 5s linear infinite alternate-reverse;
+}
+
+@keyframes dash {
+	to {
+		stroke-dashoffset: -397px;
+		filter: hue-rotate(360deg);
+	}
+}
+
+@keyframes dash2 {
+	to {
+		stroke-dashoffset: -438px;
+		filter: hue-rotate(360deg);
+	}
+}
+
+@keyframes dash3 {
+	to {
+		stroke-dashoffset: -463px;
+		filter: hue-rotate(360deg);
+	}
+}
+
+.figure {
+	position: relative;
+	background-color: #ccc;
+	border-radius: 8px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 35px;
+	z-index: 1;
+	margin: 0;
+}
+
+.figure::after {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 70px;
+	height: 70px;
+	border: 20px solid var(--cardAccent);
+	border-radius: 100%;
+	pointer-events: none;
+	z-index: 1;
+	content: "";
+}
+
+.figure h2 {
+	color: black;
+	font-weight: 700;
+	line-height: 110%;
+	text-transform: capitalize;
+	font-size: 250%;
+	margin-bottom: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.figure figcaption {
+	padding-left: 30px;
+	border-left: 1px solid black;
+	text-align: justify;
+	text-justify: inter-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	margin: 0;
+	color: #333;
+}
+
+.link {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 25px;
+	background-color: var(--cardAccent);
+	padding: 7px 17px;
+	cursor: pointer;
+	border-radius: 4px;
+	overflow: hidden;
+	z-index: 1;
+	text-decoration: none;
+	color: white;
+}
+
+.link::after {
+	position: absolute;
+	right: calc(100% + 1px);
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+	z-index: -1;
+	content: "";
+}
+
+.link:hover::after {
+	right: 0;
+	transition: all 0.3s ease;
+}
+
+.boxes li:nth-child(1) .link,
+.boxes li:nth-child(1) .figure::after {
+	animation: hueRotate 7s linear infinite reverse;
+}
+
+.boxes li:nth-child(2) .link,
+.boxes li:nth-child(2) .figure::after {
+	animation: hueRotate 9s linear infinite;
+}
+
+.boxes li:nth-child(3) .link,
+.boxes li:nth-child(3) .figure::after {
+	animation: hueRotate 5s linear infinite alternate-reverse;
+}
+
+@keyframes hueRotate {
+	to {
+		filter: hue-rotate(360deg);
+	}
+}
+
+.linkText {
+	color: white;
+	font-weight: 500;
+	margin-right: 10px;
+	margin: 0;
+}
+
+.linkIcon {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	color: white;
+	position: relative;
+	top: 1px;
+	transition: all 0.3s ease;
+}
+
+.link:hover .linkIcon {
+	margin-left: 10px;
+	transition: all 0.3s ease;
+}
+
+@media (max-width: 1050px) {
+	.cardItem {
+		width: 100%;
+	}
+}
+
+@media (max-width: 900px) {
+	.figure h2 {
+		font-size: 200%;
+	}
+}
+
+@media (max-width: 450px) {
+	.figure::after {
+		width: 50px;
+		height: 50px;
+		border: 15px solid var(--cardAccent);
+	}
+}

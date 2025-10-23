@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { services } from "../../../lib/services";
-import "./cardStyle.css";
+import styles from "./cardStyle.module.css";
 
 type CardStyleServicesProps = {
   hrefBase?: string;
@@ -21,9 +21,9 @@ const CardStyleServices = ({
   hrefBase = "/crea-tu-web",
 }: CardStyleServicesProps) => {
   return (
-    <article>
-      <section className="sectionWrapper">
-        <section id="_boxes">
+    <article className={styles.article}>
+      <section className={styles.sectionWrapper}>
+        <section className={styles.boxes}>
           <ul>
             {services.map((service, index) => {
               const colorIndex = index % SVG_COLORS.length;
@@ -31,8 +31,8 @@ const CardStyleServices = ({
               const svgPath = SVG_PATHS[colorIndex];
 
               return (
-                <li key={service.slug}>
-                  <figure>
+                <li key={service.slug} className={styles.cardItem}>
+                  <figure className={styles.figure}>
                     <h2>{service.title}</h2>
 
                     <figcaption>{service.summary}</figcaption>
@@ -40,9 +40,10 @@ const CardStyleServices = ({
                     <Link
                       href={`${hrefBase}/${service.slug}`}
                       title={`Ver ${service.title}`}
+                      className={styles.link}
                     >
-                      <em>Ver más</em>
-                      <i>&#10095;&#10095;</i>
+                      <em className={styles.linkText}>Ver más</em>
+                      <i className={styles.linkIcon}>&#10095;&#10095;</i>
                     </Link>
                   </figure>
 
