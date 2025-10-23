@@ -15,6 +15,7 @@
 	align-items: center;
 	justify-content: flex-start;
 	padding: 0 20px;
+	box-sizing: border-box;
 }
 
 .boxes {
@@ -25,6 +26,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 25px 0;
+	box-sizing: border-box;
 }
 
 .boxes ul {
@@ -38,20 +40,7 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
-}
-
-.boxes li {
-	width: calc((100% / 3) - 10px);
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 25px;
-	border-radius: 8px;
-	z-index: 1;
-	overflow: visible;
-	margin: 0;
+	box-sizing: border-box;
 }
 
 .cardItem {
@@ -241,18 +230,18 @@
 	transition: all 0.3s ease;
 }
 
-.boxes li:nth-child(1) .link,
-.boxes li:nth-child(1) .figure::after {
+.cardItem:nth-child(1) .link,
+.cardItem:nth-child(1) .figure::after {
 	animation: hueRotate 7s linear infinite reverse;
 }
 
-.boxes li:nth-child(2) .link,
-.boxes li:nth-child(2) .figure::after {
+.cardItem:nth-child(2) .link,
+.cardItem:nth-child(2) .figure::after {
 	animation: hueRotate 9s linear infinite;
 }
 
-.boxes li:nth-child(3) .link,
-.boxes li:nth-child(3) .figure::after {
+.cardItem:nth-child(3) .link,
+.cardItem:nth-child(3) .figure::after {
 	animation: hueRotate 5s linear infinite alternate-reverse;
 }
 
@@ -285,9 +274,27 @@
 	transition: all 0.3s ease;
 }
 
+/* Tablets: 2 columnas */
 @media (max-width: 1050px) {
 	.cardItem {
+		width: calc((100% / 2) - 10px);
+	}
+
+	.boxes ul {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+/* Tablets pequeñas: 1 columna */
+@media (max-width: 768px) {
+	.cardItem {
 		width: 100%;
+	}
+
+	.boxes ul {
+		flex-direction: column;
+		align-items: stretch;
 	}
 }
 
@@ -297,10 +304,61 @@
 	}
 }
 
-@media (max-width: 450px) {
+/* Celulares: columna, reducir espacios */
+@media (max-width: 480px) {
+	.sectionWrapper {
+		padding: 0 10px;
+	}
+
+	.boxes {
+		padding: 15px 0;
+		max-width: 100%;
+	}
+
+	.cardItem {
+		width: 100%;
+		padding: 15px;
+	}
+
+	.boxes ul {
+		row-gap: 15px;
+	}
+
+	.figure {
+		padding: 20px;
+	}
+
+	.figure h2 {
+		font-size: 180%;
+		margin-bottom: 15px;
+	}
+
+	.figure figcaption {
+		padding-left: 15px;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		font-size: 0.9rem;
+	}
+
 	.figure::after {
 		width: 50px;
 		height: 50px;
 		border: 15px solid var(--cardAccent);
+		top: -10px;
+		right: -10px;
+	}
+
+	.link {
+		margin-top: 15px;
+		padding: 6px 12px;
+		font-size: 0.9rem;
+	}
+
+	.linkText {
+		margin-right: 8px;
+	}
+
+	.linkIcon {
+		font-size: 0.9rem;
 	}
 }
