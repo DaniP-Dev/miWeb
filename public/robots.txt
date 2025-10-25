@@ -1,12 +1,61 @@
-# *
+# Robots.txt optimizado para Google Search Console 2025
+# Sitio: DaniDev Portfolio
+
+# Reglas para todos los buscadores
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
+Allow: /*.js
+Allow: /*.css
+Allow: /images/
+Allow: /fonts/
 
-# Host
-Host: https://daniprograma.vercel.app
+# Prohibir indexación de rutas privadas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /_next/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Prohibir archivos no indexables
+Disallow: /*?*
+Disallow: /*.pdf$
+Disallow: /*checkout*
+Disallow: /*cart*
+
+# Delay de crawl (tiempo entre peticiones)
+Crawl-delay: 1
+
+# Permitir a Google mayor velocidad de rastreo
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+Request-rate: 30/1s
+
+# Permitir a Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear bots maliciosos conocidos
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Host principal
+Host: https://danidev.com
 
 # Sitemaps
-Sitemap: https://daniprograma.vercel.app/sitemap.xml
+Sitemap: https://danidev.com/sitemap.xml
+Sitemap: https://danidev.com/sitemap-0.xml
+Sitemap: https://danidev.com/sitemap-1.xml
