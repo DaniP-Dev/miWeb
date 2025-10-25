@@ -6,6 +6,7 @@ import ThemeScript from "@/components/Hooks/ThemeScript";
 import { ContactButtom } from "@/components/ContactButtom";
 import { ReactNode } from "react";
 import "./globals.css";
+import { socialLinks } from '@/lib/constants';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://danidev.com';
 
@@ -102,9 +103,11 @@ const jsonLdOrganization = {
   'email': 'danidevcol@gmail.com',
   'telephone': '+57 3054641743',
   'sameAs': [
-    'https://www.linkedin.com/in/danidev',
-    'https://github.com/DaniP-Dev',
-    'https://twitter.com/danidev',
+    socialLinks.linkedin,
+    socialLinks.github,
+    socialLinks.x,
+    socialLinks.instagram,
+    socialLinks.tiktok,
   ],
   'knowsAbout': [
     'React',
@@ -145,12 +148,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
         
-        {/* Canonical URL */}
-        <link rel="canonical" href={baseUrl} />
-        
-        
-        {/* Meta tags adicionales para SEO */}
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    {/* Canonical URL */}
+    <link rel="canonical" href={baseUrl} />
+    {/* Idiomas y regiones más buscadas */}
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-MX" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-CO" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-ES" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-AR" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-CL" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-PE" />
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="es-US" />
+    {/* Default (idioma principal) */}
+    <link rel="alternate" href="https://daniprograma.vercel.app" hrefLang="x-default" />
+    {/* Meta tags adicionales para SEO */}
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
       <body className="bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300 min-h-screen ">
         <div className="min-h-screen">

@@ -13,6 +13,7 @@ import {
   MoonIcon,
   SunIcon,
 } from "../Icons";
+import { socialLinks } from '@/lib/constants';
 import { motion } from "framer-motion";
 import useThemeSwitcher from "../Hooks/useThemeSwitcher";
 import MobileMenu from "./MobileMenu";
@@ -105,10 +106,11 @@ const Navbar = () => {
           <CustomLink className="ml-4" href="/crea-tu-web" title="Crea tu web aquí!" />
         </nav>
         <nav className="flex items-center justify-center flex-wrap lg:mt-2">
+
           <motion.a
             target={"_blank"}
             className="w-7 mr-3"
-            href="https://instagram.com/tu-perfil"
+            href={socialLinks.instagram}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Ver mi perfil de Instagram"
@@ -119,7 +121,7 @@ const Navbar = () => {
           <motion.a
             target={"_blank"}
             className="w-7 mx-3"
-            href="https://tiktok.com/@tu-perfil"
+            href={socialLinks.tiktok}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Ver mi perfil de TikTok"
@@ -130,10 +132,10 @@ const Navbar = () => {
           <motion.a
             target={"_blank"}
             className="w-7 mx-3"
-            href="https://twitter.com/tu-perfil"
+            href={socialLinks.x}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Ver mi perfil de Twitter"
+            aria-label="Ver mi perfil de X"
           >
             <TwitterIcon />
           </motion.a>
@@ -141,7 +143,7 @@ const Navbar = () => {
           <motion.a
             target={"_blank"}
             className="w-7 mx-3"
-            href="https://linkedin.com/in/tu-perfil"
+            href={socialLinks.linkedin}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Ver mi perfil de LinkedIn"
@@ -152,7 +154,7 @@ const Navbar = () => {
           <motion.a
             target={"_blank"}
             className="w-7 mx-3"
-            href="https://github.com/DaniP-Dev/miWeb"
+            href={socialLinks.github}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Ver mi perfil de GitHub"
