@@ -31,8 +31,8 @@ export async function generateMetadata(
       'responsive design',
       'web development',
     ],
-    authors: [{ name: 'Daniel Pérez', url: baseUrl }],
-    creator: 'Daniel Pérez',
+    authors: [{ name: 'Daniel Ricardo Perez Guzman', url: baseUrl }],
+    creator: 'Daniel Ricardo Perez Guzman',
     robots: {
       index: true,
       follow: true,

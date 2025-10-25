@@ -10,9 +10,9 @@ export async function generateMetadata(
   const canonicalUrl = `${baseUrl}/curriculum`;
 
   return {
-    title: 'Curriculum | Desarrollador Full Stack | Daniel Pérez | DaniDev',
+    title: 'Curriculum | Desarrollador Full Stack | Daniel Ricardo Perez Guzman | DaniDev',
     description:
-      'Curriculum profesional de Daniel Pérez - Desarrollador Full Stack con experiencia en React, Next.js, TypeScript, PHP, Laravel y más. Descarga mi CV en PDF.',
+      'Curriculum profesional de Daniel Ricardo Perez Guzman - Desarrollador Full Stack con experiencia en React, Next.js, TypeScript, PHP, Laravel y más. Descarga mi CV en PDF.',
     keywords: [
       'curriculum',
       'CV',
@@ -25,8 +25,8 @@ export async function generateMetadata(
       'Laravel',
       'educación',
     ],
-    authors: [{ name: 'Daniel Pérez', url: baseUrl }],
-    creator: 'Daniel Pérez',
+    authors: [{ name: 'Daniel Ricardo Perez Guzman', url: baseUrl }],
+    creator: 'Daniel Ricardo Perez Guzman',
     robots: {
       index: true,
       follow: true,
@@ -39,7 +39,7 @@ export async function generateMetadata(
       locale: 'es_ES',
       url: canonicalUrl,
       siteName: 'DaniDev - Curriculum',
-      title: 'Curriculum | Desarrollador Full Stack | Daniel Pérez',
+      title: 'Curriculum | Desarrollador Full Stack | Daniel Ricardo Perez Guzman',
       description:
         'Conoce mi experiencia, habilidades y educación como Desarrollador Full Stack. Descarga mi CV profesional.',
       images: [
@@ -47,13 +47,13 @@ export async function generateMetadata(
           url: `${baseUrl}/images/og-curriculum.jpg`,
           width: 1200,
           height: 630,
-          alt: 'Curriculum - Daniel Pérez Desarrollador Full Stack',
+          alt: 'Curriculum - Daniel Ricardo Perez Guzman Desarrollador Full Stack',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Curriculum | Desarrollador Full Stack | Daniel Pérez',
+      title: 'Curriculum | Desarrollador Full Stack | Daniel Ricardo Perez Guzman',
       description: 'Mi experiencia profesional y habilidades técnicas como desarrollador',
     },
     alternates: {
@@ -71,7 +71,7 @@ const jsonLdStructuredData = {
       'url': 'https://danidev.com/curriculum',
       'name': 'Curriculum - Desarrollador Full Stack',
       'description':
-        'Curriculum profesional de Daniel Pérez con experiencia en desarrollo full stack',
+        'Curriculum profesional de Daniel Ricardo Perez Guzman con experiencia en desarrollo full stack',
       'breadcrumb': {
         '@type': 'BreadcrumbList',
         'itemListElement': [
@@ -92,7 +92,7 @@ const jsonLdStructuredData = {
     },
     {
       '@type': 'Person',
-      'name': 'Daniel Pérez',
+      'name': 'Daniel Ricardo Perez Guzman',
       'title': 'Desarrollador Full Stack',
       'url': 'https://danidev.com',
       'email': 'danidevcol@gmail.com',
@@ -151,7 +151,7 @@ const PageCurriculum = () => {
                     {/* Encabezado */}
                     <div className="mb-6 border-b-2 border-gray-300 pb-4 text-center">
                         <p className="text-xs font-semibold text-gray-600 tracking-widest">DESARROLLADOR WEB / DESARROLLADOR APP</p>
-                        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mt-1">DANIEL PÉREZ</h1>
+                        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mt-1">Daniel Ricardo Perez Guzman</h1>
                         <p className="text-xs sm:text-sm text-gray-700 mt-1">DESARROLLADOR</p>
                         
                         <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm">

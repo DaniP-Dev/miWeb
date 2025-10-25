@@ -12,12 +12,13 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 	const s = getServiceBySlug(params.slug);
 	if (!s) return {};
 	return {
-		title: `${s.title} | Crea tu web`,
-		description: s.summary,
+		title: s.seoTitle || `${s.title} | Crea tu web` ,
+		description: s.seoDescription || s.summary,
+		keywords: s.seoKeywords,
 		alternates: { canonical: `/crea-tu-web/${s.slug}` },
 		openGraph: {
-			title: s.title,
-			description: s.summary,
+			title: s.seoTitle || s.title,
+			description: s.seoDescription || s.summary,
 			images: s.heroImage ? [{ url: s.heroImage }] : [],
 			url: `/crea-tu-web/${s.slug}`,
 			type: "article",

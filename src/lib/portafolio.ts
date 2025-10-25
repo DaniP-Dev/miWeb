@@ -10,6 +10,10 @@ export type PortfolioItem = {
     client?: string;
     role?: string;
     links?: { label: string; href: string }[]; // demo, repo, case study, etc.
+    seoTitle?: string;
+    seoDescription?: string;
+    seoKeywords?: string[];
+    schemaType?: string; // Ej: "CreativeWork" o "Project"
 };
 
 export const portfolio: PortfolioItem[] = [
@@ -29,6 +33,10 @@ export const portfolio: PortfolioItem[] = [
             { label: "Ver demo", href: "https://productiveco.example" },
             { label: "Caso de estudio", href: "/portfolio/landing-producto-saas/case-study" }
         ],
+        seoTitle: "Landing SaaS de productividad | Caso real | DaniDev",
+        seoDescription: "Landing page para SaaS enfocada en conversión, performance y captación de leads. Integración con CRM y eventos. Caso real de éxito.",
+        seoKeywords: ["landing page", "SaaS", "conversión", "CRM", "A/B testing"],
+        schemaType: "CreativeWork",
     },
     {
         slug: "tienda-decoracion-online",
@@ -46,6 +54,10 @@ export const portfolio: PortfolioItem[] = [
         client: "DecoraStore",
         role: "Fullstack",
         links: [{ label: "Tienda", href: "https://decorastore.example" }],
+        seoTitle: "Tienda online de decoración | E-commerce moderno | DaniDev",
+        seoDescription: "E-commerce de decoración con catálogo dinámico, pagos seguros y panel de administración. Optimizado para SEO y rendimiento móvil.",
+        seoKeywords: ["e-commerce", "tienda online", "decoración", "SEO", "checkout"],
+        schemaType: "CreativeWork",
     },
     {
         slug: "dashboard-analitica",
@@ -60,6 +72,10 @@ export const portfolio: PortfolioItem[] = [
         client: "InHouse",
         role: "Lead Frontend",
         links: [{ label: "Caso de estudio", href: "/portfolio/dashboard-analitica/case-study" }],
+        seoTitle: "Dashboard analítica operaciones | Visualización KPIs | DaniDev",
+        seoDescription: "Dashboard interactivo para monitoreo de KPIs en tiempo real, gráficos y alertas. Arquitectura moderna y visualización avanzada.",
+        seoKeywords: ["dashboard", "KPIs", "analítica", "visualización", "microservicios"],
+        schemaType: "CreativeWork",
     },
 ];
 

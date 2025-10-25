@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     'programador',
     'desarrollo personalizado',
   ],
-  authors: [{ name: 'Daniel Pérez', url: baseUrl }],
-  creator: 'Daniel Pérez',
+  authors: [{ name: 'Daniel Ricardo Perez Guzman', url: baseUrl }],
+  creator: 'Daniel Ricardo Perez Guzman',
   publisher: 'DaniDev',
   applicationName: 'DaniDev Portfolio',
   formatDetection: {
@@ -100,7 +100,7 @@ export const viewport: Viewport = {
 const jsonLdOrganization = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  'name': 'Daniel Pérez',
+  'name': 'Daniel Ricardo Perez Guzman',
   'url': baseUrl,
   'image': `${baseUrl}/images/profile/profile.jpg`,
   'description': 'Desarrollador Full Stack especializado en React, Next.js y tecnologías modernas',
@@ -154,8 +154,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {/* Canonical URL */}
         <link rel="canonical" href={baseUrl} />
         
-        {/* Manifest para PWA */}
-        <link rel="manifest" href="/manifest.json" />
         
         {/* Meta tags adicionales para SEO */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

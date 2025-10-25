@@ -2,8 +2,6 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import CardsPortafolio from '@/components/cards/CardsPortafolio';
 import React from 'react';
 
-// Prueba de actualización de fecha en sitemap - 2025-10-25
-
 type Props = {
   params: Promise<{ slug?: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -32,8 +30,8 @@ export async function generateMetadata(
       'freelancer',
       'desarrollo web',
     ],
-    authors: [{ name: 'Daniel Pérez', url: baseUrl }],
-    creator: 'Daniel Pérez',
+    authors: [{ name: 'Daniel Ricardo Perez Guzman', url: baseUrl }],
+    creator: 'Daniel Ricardo Perez Guzman',
     robots: {
       index: true,
       follow: true,

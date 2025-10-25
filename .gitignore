@@ -2,5 +2,3 @@
 /.next
 /.vscode
 /node_modules
-/public/sitemap.xml
-/scripts/.sitemap-timestamps.json
