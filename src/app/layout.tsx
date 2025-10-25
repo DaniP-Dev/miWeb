@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     'max-video-preview': -1,
   },
   verification: {
-    google: 'google-site-verification-code', // Reemplazar con tu código
+    google: 'googleecd6e6ebd8786e38.html',
   },
   alternates: {
     canonical: baseUrl,
