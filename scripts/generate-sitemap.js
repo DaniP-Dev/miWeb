@@ -1,25 +1,26 @@
 #!/usr/bin/env node
 
 /**
- * Script para generar sitemap dinámico
- * Se ejecuta después de cada build (npm run build)
- * Actualiza automáticamente la fecha de lastModified SOLO de páginas que cambiaron
+ * Script para generar sitemap dinámico - VERSIÓN MEJORADA
+ * Mantiene un registro de fechas de modificación por página
+ * Solo actualiza la fecha cuando la página realmente cambia
  */
 
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const crypto = require('crypto');
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://danidev.com';
 const projectRoot = path.resolve(__dirname, '..');
 const SITEMAP_PATH = path.join(projectRoot, 'public', 'sitemap.xml');
+const TIMESTAMPS_FILE = path.join(projectRoot, 'scripts', '.sitemap-timestamps.json');
 
 // Mapeo de rutas a archivos/directorios
 const pageMap = {
-  '/': ['src/app/page.tsx', 'src/app/layout.tsx'],
+  '/': ['src/app/page.tsx'],
   '/portafolio': ['src/app/portafolio/page.tsx'],
   '/crea-tu-web': ['src/app/crea-tu-web/page.tsx'],
-  '/curriculum': ['src/app/curriculum/page.tsx'],
+  '/curriculum': ['src/app/curriculum/page.tsx', 'src/app/curriculum/download-button.tsx'],
   '/prueba': ['src/app/prueba/page.tsx'],
 };
 
@@ -31,51 +32,80 @@ const pageDefaults = {
   '/prueba': { priority: 0.3, changefreq: 'never' },
 };
 
-/**
- * Obtiene la fecha del último commit que modificó un archivo
- */
-function getLastModifiedDate(filePath) {
+// Cargar timestamps anteriores
+function loadTimestamps() {
   try {
-    const timestamp = execSync(`git log -1 --format=%aI "${filePath}" 2>/dev/null || echo ""`, {
-      encoding: 'utf8',
-      stdio: ['pipe', 'pipe', 'pipe'],
-    }).trim();
-    
-    if (timestamp) {
-      return new Date(timestamp).toISOString();
+    if (fs.existsSync(TIMESTAMPS_FILE)) {
+      const data = fs.readFileSync(TIMESTAMPS_FILE, 'utf8');
+      return JSON.parse(data);
     }
   } catch (e) {
-    // Git no disponible o archivo no está en control de versiones
+    // Archivo no existe o está corrupto
   }
-  
-  // Fallback: retorna la fecha actual
-  return new Date().toISOString();
+  return {};
 }
 
-/**
- * Obtiene la fecha más reciente entre múltiples archivos
- */
-function getPageLastModified(files) {
-  if (!files || files.length === 0) {
-    return new Date().toISOString();
+// Guardar timestamps
+function saveTimestamps(timestamps) {
+  try {
+    fs.writeFileSync(TIMESTAMPS_FILE, JSON.stringify(timestamps, null, 2), 'utf8');
+  } catch (e) {
+    console.warn('⚠️ No se pudo guardar timestamps:', e.message);
   }
-  
-  const dates = files
-    .map(file => {
-      const fullPath = path.join(projectRoot, file);
-      return getLastModifiedDate(fullPath);
-    })
-    .map(dateStr => new Date(dateStr).getTime());
-  
-  if (dates.length === 0) {
-    return new Date().toISOString();
+}
+
+// Calcular hash del archivo para detectar cambios
+function getFileHash(filePath) {
+  try {
+    const fullPath = path.join(projectRoot, filePath);
+    if (!fs.existsSync(fullPath)) {
+      return 'NOT_FOUND';
+    }
+    const content = fs.readFileSync(fullPath, 'utf8');
+    return crypto.createHash('md5').update(content).digest('hex');
+  } catch (e) {
+    return 'ERROR';
   }
-  
-  const maxTime = Math.max(...dates);
-  return new Date(maxTime).toISOString();
+}
+
+// Obtener timestamps de la página
+function getPageTimestamp(pagePath, files, oldTimestamps) {
+  const currentHashes = {};
+  let hasChanged = false;
+
+  // Calcular hashes actuales
+  files.forEach(file => {
+    const hash = getFileHash(file);
+    currentHashes[file] = hash;
+  });
+
+  // Comparar con hashes anteriores
+  const oldPageData = oldTimestamps[pagePath] || {};
+  const oldHashes = oldPageData.hashes || {};
+
+  Object.keys(currentHashes).forEach(file => {
+    if (oldHashes[file] !== currentHashes[file]) {
+      hasChanged = true;
+    }
+  });
+
+  // Si cambió, actualizar la fecha
+  let timestamp = oldPageData.lastmod || new Date().toISOString();
+  if (hasChanged) {
+    timestamp = new Date().toISOString();
+  }
+
+  return {
+    lastmod: timestamp,
+    hashes: currentHashes,
+    changed: hasChanged,
+  };
 }
 
 function generateSitemap() {
+  const oldTimestamps = loadTimestamps();
+  const newTimestamps = {};
+
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
@@ -86,14 +116,19 @@ function generateSitemap() {
 `;
 
   // Generar URLs
-  Object.entries(pageMap).forEach(([path, files]) => {
-    const lastModified = getPageLastModified(files);
-    const { priority, changefreq } = pageDefaults[path];
+  Object.entries(pageMap).forEach(([pagePath, files]) => {
+    const pageData = getPageTimestamp(pagePath, files, oldTimestamps);
+    const { priority, changefreq } = pageDefaults[pagePath];
+    
+    newTimestamps[pagePath] = pageData;
+
+    const changeIndicator = pageData.changed ? '🔄' : '✓';
+    console.log(`  ${changeIndicator} ${pagePath} → ${pageData.lastmod}`);
     
     xml += `
   <url>
-    <loc>${BASE_URL}${path}</loc>
-    <lastmod>${lastModified}</lastmod>
+    <loc>${BASE_URL}${pagePath}</loc>
+    <lastmod>${pageData.lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`;
@@ -101,6 +136,9 @@ function generateSitemap() {
 
   xml += `
 </urlset>`;
+
+  // Guardar nuevos timestamps
+  saveTimestamps(newTimestamps);
 
   return xml;
 }
@@ -111,12 +149,11 @@ try {
     fs.mkdirSync(publicDir, { recursive: true });
   }
   
+  console.log(`\n📍 Generando sitemap dinámico...`);
   const sitemapContent = generateSitemap();
   fs.writeFileSync(SITEMAP_PATH, sitemapContent, 'utf8');
-  console.log(`✅ Sitemap generado exitosamente`);
-  console.log(`📂 Ubicación: ${SITEMAP_PATH}`);
-  console.log(`🌐 URL base: ${BASE_URL}`);
-  console.log(`📅 Fechas actualizadas desde Git commit history`);
+  console.log(`\n✅ Sitemap generado exitosamente`);
+  console.log(`📂 ${SITEMAP_PATH}\n`);
 } catch (error) {
   console.error('❌ Error al generar el sitemap:', error.message);
   process.exit(1);
