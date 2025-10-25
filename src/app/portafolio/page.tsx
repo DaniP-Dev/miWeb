@@ -2,6 +2,8 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import CardsPortafolio from '@/components/cards/CardsPortafolio';
 import React from 'react';
 
+// Prueba de actualización de fecha en sitemap - 2025-10-25
+
 type Props = {
   params: Promise<{ slug?: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
