@@ -32,12 +32,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Daniel Ricardo Perez Guzman', url: baseUrl }],
   creator: 'Daniel Ricardo Perez Guzman',
   publisher: 'DaniDev',
-  applicationName: 'DaniDev Portfolio',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
@@ -157,11 +151,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         
         {/* Meta tags adicionales para SEO */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="DaniDev" />
-        <meta name="format-detection" content="telephone=no" />
       </head>
       <body className="bg-light dark:bg-dark text-dark dark:text-light transition-colors duration-300 min-h-screen ">
         <div className="min-h-screen">
