@@ -1,28 +1,148 @@
-'use client';
-
+import type { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
+import { DownloadButton } from '../../components/Download-button';
 
-const CurriculumPage = () => {
-    const handleDownloadPDF = () => {
-        const link = document.createElement('a');
-        link.href = '/Daniel_Perez_CV.pdf';
-        link.download = 'Daniel_Perez_CV.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
+export async function generateMetadata(
+  _props: any,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://danidev.com';
+  const canonicalUrl = `${baseUrl}/curriculum`;
+
+  return {
+    title: 'Curriculum | Desarrollador Full Stack | Daniel Pérez | DaniDev',
+    description:
+      'Curriculum profesional de Daniel Pérez - Desarrollador Full Stack con experiencia en React, Next.js, TypeScript, PHP, Laravel y más. Descarga mi CV en PDF.',
+    keywords: [
+      'curriculum',
+      'CV',
+      'desarrollador full stack',
+      'experiencia',
+      'habilidades técnicas',
+      'React',
+      'Next.js',
+      'PHP',
+      'Laravel',
+      'educación',
+    ],
+    authors: [{ name: 'Daniel Pérez', url: baseUrl }],
+    creator: 'Daniel Pérez',
+    robots: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+    openGraph: {
+      type: 'website',
+      locale: 'es_ES',
+      url: canonicalUrl,
+      siteName: 'DaniDev - Curriculum',
+      title: 'Curriculum | Desarrollador Full Stack | Daniel Pérez',
+      description:
+        'Conoce mi experiencia, habilidades y educación como Desarrollador Full Stack. Descarga mi CV profesional.',
+      images: [
+        {
+          url: `${baseUrl}/images/og-curriculum.jpg`,
+          width: 1200,
+          height: 630,
+          alt: 'Curriculum - Daniel Pérez Desarrollador Full Stack',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Curriculum | Desarrollador Full Stack | Daniel Pérez',
+      description: 'Mi experiencia profesional y habilidades técnicas como desarrollador',
+    },
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+}
+
+// JSON-LD Structured Data
+const jsonLdStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      'url': 'https://danidev.com/curriculum',
+      'name': 'Curriculum - Desarrollador Full Stack',
+      'description':
+        'Curriculum profesional de Daniel Pérez con experiencia en desarrollo full stack',
+      'breadcrumb': {
+        '@type': 'BreadcrumbList',
+        'itemListElement': [
+          {
+            '@type': 'ListItem',
+            'position': 1,
+            'name': 'Inicio',
+            'item': 'https://danidev.com',
+          },
+          {
+            '@type': 'ListItem',
+            'position': 2,
+            'name': 'Curriculum',
+            'item': 'https://danidev.com/curriculum',
+          },
+        ],
+      },
+    },
+    {
+      '@type': 'Person',
+      'name': 'Daniel Pérez',
+      'title': 'Desarrollador Full Stack',
+      'url': 'https://danidev.com',
+      'email': 'danidevcol@gmail.com',
+      'telephone': '+57 3054641743',
+      'jobTitle': 'Desarrollador Full Stack',
+      'description': 'Desarrollador Full Stack especializado en React, Next.js, PHP y Laravel',
+      'knowsAbout': [
+        'React.js',
+        'Next.js',
+        'TypeScript',
+        'PHP',
+        'Laravel',
+        'SQL',
+        'NoSQL',
+        'Tailwind CSS',
+        'Bootstrap',
+        'WordPress',
+      ],
+      'sameAs': [
+        'https://www.linkedin.com/in/danidev',
+        'https://github.com/DaniP-Dev',
+      ],
+      'education': {
+        '@type': 'EducationalOccupationalCredential',
+        'name': 'Mantenimiento de sistemas informáticos',
+        'credentialCategory': 'degree',
+      },
+      'workLocation': {
+        '@type': 'Place',
+        'name': 'Barranquilla, Colombia',
+      },
+    },
+  ],
+};
+
+const PageCurriculum = () => {
 
     return (
-        <div className="min-h-screen bg-light dark:bg-dark py-12 px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl">
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLdStructuredData),
+                }}
+            />
+            <div className="min-h-screen bg-light dark:bg-dark py-12 px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-4xl">
                 {/* Botón de Descarga */}
                 <div className="mb-6 flex justify-end">
-                    <button
-                        onClick={handleDownloadPDF}
-                        className="rounded-lg bg-blue-600 px-6 py-2 font-semibold text-white hover:bg-blue-700 transition-colors"
-                    >
-                        ⬇ Descargar PDF
-                    </button>
+                    <DownloadButton />
                 </div>
 
                 {/* Contenedor del CV */}
@@ -212,9 +332,10 @@ const CurriculumPage = () => {
                         Este currículum está optimizado para sistemas ATS (Applicant Tracking Systems)
                     </div>
                 </div>
+                </div>
             </div>
-        </div>
-    );
-};
+            </>
+        );
+    };
 
-export default CurriculumPage;
+export default PageCurriculum;
