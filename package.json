@@ -5,9 +5,7 @@
   "author": "DaniDev <danidev@tusitio.com>",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/generate-sitemap.js",
-    "postbuild": "node scripts/generate-sitemap.js",
-    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
