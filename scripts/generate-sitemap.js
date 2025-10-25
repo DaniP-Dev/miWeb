@@ -10,7 +10,13 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://danidev.com';
-const SITEMAP_PATH = path.join(__dirname, 'public', 'sitemap.xml');
+const SITEMAP_PATH = path.join(path.resolve(__dirname, '..'), 'public', 'sitemap.xml');
+
+// Crear directorio si no existe
+const publicDir = path.dirname(SITEMAP_PATH);
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
+}
 
 const pages = [
   { path: '/', priority: 1.0, changefreq: 'weekly' },
@@ -51,9 +57,11 @@ function generateSitemap() {
 try {
   const sitemapContent = generateSitemap();
   fs.writeFileSync(SITEMAP_PATH, sitemapContent, 'utf8');
-  console.log(`✅ Sitemap generado exitosamente: ${SITEMAP_PATH}`);
+  console.log(`✅ Sitemap generado exitosamente`);
+  console.log(`📂 Ubicación: ${SITEMAP_PATH}`);
   console.log(`📅 Última actualización: ${new Date().toISOString()}`);
+  console.log(`🌐 URL base: ${BASE_URL}`);
 } catch (error) {
-  console.error('❌ Error al generar el sitemap:', error);
+  console.error('❌ Error al generar el sitemap:', error.message);
   process.exit(1);
 }
