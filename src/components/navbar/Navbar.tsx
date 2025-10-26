@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import React, { useState } from "react";
 import Logo from "../Logo";
@@ -17,6 +16,7 @@ import { socialLinks } from '@/lib/constants';
 import { motion } from "framer-motion";
 import useThemeSwitcher from "../Hooks/useThemeSwitcher";
 import MobileMenu from "./MobileMenu";
+import ButtonWpp from "@/components/ButtonWpp";
 
 interface CustomLinkProps {
   href: string;
@@ -181,8 +181,13 @@ const Navbar = () => {
       {/* Mobile Menu Component */}
       <MobileMenu isOpen={isOpen} toggleMenu={handleClick} />
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%]">
+      <div className="absolute left-[50%] top-2 translate-x-[-50%] flex items-center w-full justify-center">
         <Logo />
+        <div
+          className="hidden xs:block sm:hidden ml-auto px-3 py-2 absolute right-2 top-1"
+        >
+          <ButtonWpp />
+        </div>
       </div>
     </header>
   );

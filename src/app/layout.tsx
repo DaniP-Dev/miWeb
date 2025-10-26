@@ -3,10 +3,10 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import PageWrapper from "@/components/transition/PageWrapper";
 import ThemeScript from "@/components/Hooks/ThemeScript";
-import { ContactButtom } from "@/components/ContactButtom";
 import { ReactNode } from "react";
 import "./globals.css";
 import { socialLinks } from '@/lib/constants';
+import ButtonWpp from '@/components/ButtonWpp';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://danidev.com';
 
@@ -172,7 +172,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <PageWrapper>
             <main className="flex-1">{children}</main>
           </PageWrapper>
-          <ContactButtom />
+          <div className="sm:hidden left-4 ">
+            <ButtonWpp />
+          </div>
         </div>
         <Footer />
       </body>
