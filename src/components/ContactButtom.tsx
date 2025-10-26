@@ -26,7 +26,7 @@ export const ContactButtom = () => {
           rel="noopener noreferrer"
           className="flex items-center justify-center absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] border border-solid bg-dark rounded-full text-white text-[10px] w-12 h-12 font-semibold hover:bg-light hover:border-dark hover:text-dark dark:text-dark dark:bg-light dark:hover:bg-dark dark:hover:text-light dark:hover:border-light"
         >
-          Let's Go
+          Wpp
         </a>
       </div>
     </div>

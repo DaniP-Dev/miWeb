@@ -12,6 +12,8 @@ import {
   MoonIcon,
   SunIcon,
 } from "../Icons";
+
+import { socialLinks } from '@/lib/constants';
 import useThemeSwitcher from "../Hooks/useThemeSwitcher";
 
 interface MobileMenuProps {
@@ -108,11 +110,13 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
       </nav>
 
           {/* Social Icons & Theme Toggle */}
+
           <nav className="flex items-center justify-center mt-2">
             <motion.a
-              target={"_blank"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-6 mr-3"
-              href="https://instagram.com/tu-perfil"
+              href={socialLinks.instagram}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Ver mi perfil de Instagram"
@@ -121,9 +125,10 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
             </motion.a>
 
             <motion.a
-              target={"_blank"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-6 mx-3"
-              href="https://tiktok.com/@tu-perfil"
+              href={socialLinks.tiktok}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Ver mi perfil de TikTok"
@@ -132,20 +137,22 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
             </motion.a>
 
             <motion.a
-              target={"_blank"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-6 mx-3"
-              href="https://twitter.com/tu-perfil"
+              href={socialLinks.x}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
-              aria-label="Ver mi perfil de Twitter"
+              aria-label="Ver mi perfil de X"
             >
               <TwitterIcon />
             </motion.a>
 
             <motion.a
-              target={"_blank"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-6 mx-3"
-              href="https://linkedin.com/in/tu-perfil"
+              href={socialLinks.linkedin}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Ver mi perfil de LinkedIn"
@@ -154,9 +161,10 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
             </motion.a>
 
             <motion.a
-              target={"_blank"}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-6 mx-3"
-              href="https://github.com/DaniP-Dev/miWeb"
+              href={socialLinks.github}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Ver mi perfil de GitHub"

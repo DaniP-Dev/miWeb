@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next';
 import React from 'react';
 import { DownloadButton } from '../../components/Download-button';
+import { LinkedInIcon, GithubIcon } from '../../components/Icons';
 
 export async function generateMetadata(
   _props: any,
@@ -155,22 +156,28 @@ const PageCurriculum = () => {
                         <p className="text-xs sm:text-sm text-gray-700 mt-1">DESARROLLADOR</p>
                         
                         <div className="mt-4 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm">
-                            <div className="flex items-center gap-1">
-                                <span>✉️</span>
-                                <a href="mailto:danidevcol@gmail.com" className="text-gray-700 hover:text-blue-600 truncate">
-                                    danidevcol@gmail.com
-                                </a>
-                            </div>
-                            <div className="flex items-center gap-1">
-                                <span>📱</span>
-                                <a href="tel:+573054641743" className="text-blue-600 hover:underline">
-                                    +57 3054641743
-                                </a>
-                            </div>
-                            <div className="hidden lg:flex items-center gap-1">
-                                <span>🔗</span>
-                                <span className="text-gray-700">LinkedIn GitHub</span>
-                            </div>
+                                <div className="mt-4 flex flex-row sm:flex-col justify-center items-center gap-2 sm:gap-4 text-xs sm:text-sm w-full">
+                                    <div className="flex items-center gap-1 w-full max-w-[220px] break-all justify-center">
+                                        <span>✉️</span>
+                                        <a href="mailto:danidevcol@gmail.com" className="text-gray-700 hover:text-blue-600 break-all">
+                                            danidevcol@gmail.com
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center gap-1 w-full max-w-[160px] break-all justify-center">
+                                        <span>📱</span>
+                                        <a href="tel:+573054641743" className="text-blue-600 hover:underline break-all">
+                                            +57 3054641743
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center gap-4 justify-center mt-1 sm:mt-0">
+                                        <a href="https://www.linkedin.com/in/danidev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-blue-600 hover:text-blue-800">
+                                            <LinkedInIcon className="w-5 h-5" />
+                                        </a>
+                                        <a href="https://github.com/DaniP-Dev" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-blue-600 hover:text-blue-800">
+                                            <GithubIcon className="w-5 h-5" />
+                                        </a>
+                                    </div>
+                                </div>
                         </div>
                     </div>
 
