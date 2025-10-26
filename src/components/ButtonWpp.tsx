@@ -1,6 +1,6 @@
 import React from 'react';
 
-const whatsappLink = 'https://wa.me/573053088888'; // Cambia el número según tu necesidad
+const whatsappLink = 'https://wa.me/573016328564'; // Cambia el número según tu necesidad
 
 const ButtonWpp = () => {
     return (
