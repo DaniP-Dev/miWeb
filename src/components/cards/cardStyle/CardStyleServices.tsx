@@ -29,14 +29,13 @@ const CardStyleServices = ({
               const colorIndex = index % SVG_COLORS.length;
               const svgColor = SVG_COLORS[colorIndex];
               const svgPath = SVG_PATHS[colorIndex];
+              const styleClass = styles[`cardItem--style${colorIndex + 1}`];
 
               return (
-                <li key={service.slug} className={styles.cardItem}>
+                <li key={service.slug} className={`${styles.cardItem} ${styleClass}`}>
                   <figure className={styles.figure}>
                     <h2>{service.title}</h2>
-
                     <figcaption>{service.summary}</figcaption>
-
                     <Link
                       href={`${hrefBase}/${service.slug}`}
                       title={`Ver ${service.title}`}
@@ -46,7 +45,6 @@ const CardStyleServices = ({
                       <i className={styles.linkIcon}>&#10095;&#10095;</i>
                     </Link>
                   </figure>
-
                   <svg
                     preserveAspectRatio="none"
                     stroke={svgColor}

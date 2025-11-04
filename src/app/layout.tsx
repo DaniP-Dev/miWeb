@@ -172,9 +172,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <PageWrapper>
             <main className="flex-1">{children}</main>
           </PageWrapper>
-          <div className="sm:hidden left-4 ">
-            <ButtonWpp />
-          </div>
         </div>
         <Footer />
       </body>

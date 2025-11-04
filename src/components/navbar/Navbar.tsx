@@ -181,13 +181,8 @@ const Navbar = () => {
       {/* Mobile Menu Component */}
       <MobileMenu isOpen={isOpen} toggleMenu={handleClick} />
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%] flex items-center w-full justify-center">
+  <div className="absolute left-[50%] top-2 translate-x-[-50%] flex items-center justify-center">
         <Logo />
-        <div
-          className="hidden xs:block sm:hidden ml-auto px-3 py-2 absolute right-2 top-1"
-        >
-          <ButtonWpp />
-        </div>
       </div>
     </header>
   );

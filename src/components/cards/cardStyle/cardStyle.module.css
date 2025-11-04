@@ -57,15 +57,14 @@
 	margin: 0;
 }
 
-.cardItem:nth-child(1) {
+
+.cardItem--style1 {
 	--cardAccent: #3f9f47;
 }
-
-.cardItem:nth-child(2) {
+.cardItem--style2 {
 	--cardAccent: #ff3636;
 }
-
-.cardItem:nth-child(3) {
+.cardItem--style3 {
 	--cardAccent: #00a9ff;
 }
 
@@ -80,15 +79,13 @@
 	content: "";
 }
 
-.cardItem:nth-child(1)::after {
+.cardItem--style1::after {
 	animation: hueRotateSpecial 7s linear infinite reverse;
 }
-
-.cardItem:nth-child(2)::after {
+.cardItem--style2::after {
 	animation: hueRotateSpecial 9s linear infinite;
 }
-
-.cardItem:nth-child(3)::after {
+.cardItem--style3::after {
 	animation: hueRotateSpecial 5s linear infinite alternate-reverse;
 }
 
@@ -107,17 +104,15 @@
 	z-index: -1;
 }
 
-.cardItem:nth-child(1) svg {
+.cardItem--style1 svg {
 	stroke-dasharray: 331 66;
 	animation: dash 7s linear infinite reverse;
 }
-
-.cardItem:nth-child(2) svg {
+.cardItem--style2 svg {
 	stroke-dasharray: 307 131;
 	animation: dash2 9s linear infinite;
 }
-
-.cardItem:nth-child(3) svg {
+.cardItem--style3 svg {
 	stroke-dasharray: 309 154;
 	animation: dash3 5s linear infinite alternate-reverse;
 }
@@ -230,18 +225,16 @@
 	transition: all 0.3s ease;
 }
 
-.cardItem:nth-child(1) .link,
-.cardItem:nth-child(1) .figure::after {
+.cardItem--style1 .link,
+.cardItem--style1 .figure::after {
 	animation: hueRotate 7s linear infinite reverse;
 }
-
-.cardItem:nth-child(2) .link,
-.cardItem:nth-child(2) .figure::after {
+.cardItem--style2 .link,
+.cardItem--style2 .figure::after {
 	animation: hueRotate 9s linear infinite;
 }
-
-.cardItem:nth-child(3) .link,
-.cardItem:nth-child(3) .figure::after {
+.cardItem--style3 .link,
+.cardItem--style3 .figure::after {
 	animation: hueRotate 5s linear infinite alternate-reverse;
 }
 
