@@ -30,7 +30,7 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
   return (
     <Link
       href={href}
-      className={`${className} rounded relative group lg:text-light lg:dark:text-dark`}
+      className={`${className} rounded relative group text-dark lg:text-dark dark:text-light dark:lg:text-light`}
     >
       {title}
       <span
@@ -39,7 +39,7 @@ const CustomLink = ({ href, title, className = "" }: CustomLinkProps) => {
               group-hover:w-full transition-[width] ease duration-300 dark:bg-light
               ${
                 pathname === href ? "w-full" : " w-0"
-              } lg:bg-light lg:dark:bg-dark
+              }
               `}
       >
         &nbsp;
@@ -58,7 +58,7 @@ const Navbar = () => {
 
   if (!mounted) {
     return (
-      <header className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium dark:text-light lg:px-16 relative z-50 md:px-12 sm:px-8">
+      <header className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium dark:text-light md:px-16 relative z-50 lg:px-12 sm:px-8">
         <div className="w-6 h-6 bg-dark dark:bg-light opacity-50 rounded"></div>
         <div className="w-16 h-16 bg-dark dark:bg-light opacity-50 rounded-full"></div>
         <div className="flex space-x-3">
@@ -71,11 +71,11 @@ const Navbar = () => {
   }
 
   return (
-    <header className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium dark:text-light lg:px-16 relative z-50 md:px-12 sm:px-8">
+    <header className="w-full flex items-center justify-between px-32 pt-10 pb-8 font-medium dark:text-light md:px-16 relative z-50 lg:px-12 sm:px-8">
       {/* Botón hamburguesa fijo para móviles */}
       <button
         type="button"
-        className="flex-col items-center justify-center flex lg:hidden lg:fixed lg:top-8 lg:left-4 lg:z-[60] lg:bg-light/80 lg:dark:bg-dark/80 lg:backdrop-blur-sm lg:rounded-lg lg:p-3 lg:shadow-lg"
+        className="flex-col items-center justify-center flex md:hidden md:fixed md:top-8 md:left-4 md:z-[60] md:bg-light/80 md:dark:bg-dark/80 md:backdrop-blur-sm md:rounded-lg md:p-3 md:shadow-lg"
         aria-controls="mobile-menu"
         aria-expanded={isOpen}
         onClick={handleClick}
@@ -98,7 +98,7 @@ const Navbar = () => {
         ></span>
       </button>
 
-      <div className="hidden lg:flex w-full justify-between items-center">
+      <div className="hidden md:flex w-full justify-between items-center">
         <nav className="flex items-center justify-center">
           <CustomLink className="mr-4" href="/" title="Inicio" />
           <CustomLink className="mx-4" href="/curriculum" title="Curriculum" />
