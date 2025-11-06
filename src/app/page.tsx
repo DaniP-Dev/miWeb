@@ -11,7 +11,7 @@ export default function Home() {
       >
         <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
           <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
-            <div className="w-1/2 lg:hidden md:flex flex self-center max-h-fit">
+            <div className="w-1/2 md:hidden flex self-center max-h-fit">
               {
                 <Image
                   priority={true}
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
           </div>
         </Layout>
-        <div className="fixed right-8 bottom-8 inline-block md:hidden">
+        <div className="fixed right-8 bottom-8 hidden lg:inline-block">
           <div className="bg-white/90 dark:bg-dark/90 backdrop-blur-md rounded-xl p-4 shadow-lg border border-gray-200/50 dark:border-gray-700/50 min-w-[280px]">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>

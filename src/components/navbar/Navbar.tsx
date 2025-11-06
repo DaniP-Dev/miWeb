@@ -75,7 +75,7 @@ const Navbar = () => {
       {/* Botón hamburguesa fijo para móviles */}
       <button
         type="button"
-        className="flex-col items-center justify-center hidden lg:flex lg:fixed lg:top-8 lg:left-4 lg:z-[60] lg:bg-light/80 lg:dark:bg-dark/80 lg:backdrop-blur-sm lg:rounded-lg lg:p-3 lg:shadow-lg"
+        className="flex-col items-center justify-center flex lg:hidden lg:fixed lg:top-8 lg:left-4 lg:z-[60] lg:bg-light/80 lg:dark:bg-dark/80 lg:backdrop-blur-sm lg:rounded-lg lg:p-3 lg:shadow-lg"
         aria-controls="mobile-menu"
         aria-expanded={isOpen}
         onClick={handleClick}
@@ -98,7 +98,7 @@ const Navbar = () => {
         ></span>
       </button>
 
-      <div className="w-full flex justify-between items-center lg:hidden">
+      <div className="hidden lg:flex w-full justify-between items-center">
         <nav className="flex items-center justify-center">
           <CustomLink className="mr-4" href="/" title="Inicio" />
           <CustomLink className="mx-4" href="/curriculum" title="Curriculum" />

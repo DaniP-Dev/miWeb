@@ -106,7 +106,7 @@ export default function CardsPortafolio({
 			{title && (
 				<h2 className="mb-6 text-2xl font-bold tracking-tight">{title}</h2>
 			)}
-			<ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			<ul className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
 				{list.map((p) => (
 					<PortfolioCard
 						key={p.slug}
