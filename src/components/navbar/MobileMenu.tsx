@@ -75,14 +75,14 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
           
           {/* Menú móvil */}
           <motion.div
-            className="min-w-[70vw] sm:min-w-[90vw] h-[75vh] flex justify-between items-center flex-col fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-32 bg-dark/90 dark:bg-light/75 rounded-lg z-50 backdrop-blur-md"
+            className="w-[85vw] max-w-md max-h-[80vh] flex justify-between items-center flex-col fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 py-8 px-6 bg-dark/90 dark:bg-light/75 rounded-lg z-50 backdrop-blur-md overflow-y-auto"
             initial={{ scale: 0, x: "-50%", y: "-50%", opacity: 0 }}
             animate={{ scale: 1, x: "-50%", y: "-50%", opacity: 1 }}
             exit={{ scale: 0, x: "-50%", y: "-50%", opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
       {/* Navigation Links */}
-      <nav className="flex items-center justify-center flex-col">
+      <nav className="flex items-center justify-center flex-col gap-6">
         <CustomMobileLink
           toggle={toggleMenu}
           className="mr-4 lg:m-0 lg:my-2 text-lg font-medium"
@@ -111,7 +111,7 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
 
           {/* Social Icons & Theme Toggle */}
 
-          <nav className="flex items-center justify-center mt-2">
+          <nav className="flex items-center justify-center gap-2 mt-8">
             <motion.a
               target="_blank"
               rel="noopener noreferrer"
@@ -163,26 +163,26 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
             <motion.a
               target="_blank"
               rel="noopener noreferrer"
-              className="w-6 mx-3"
+              className="w-6 mx-3 rounded-full p-1 bg-light dark:bg-dark flex items-center justify-center"
               href={socialLinks.github}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               aria-label="Ver mi perfil de GitHub"
             >
-              <GithubIcon />
+              <GithubIcon className="text-dark dark:text-light" />
             </motion.a>
 
             <button
               onClick={toggleTheme}
-              className={`w-6 h-6 ease m-1 ml-6 sm:mx-1 flex items-center justify-center rounded-full p-1 border-2 border-opacity-30
-                ${mode === "light" ? "bg-light text-dark border-light" : "bg-dark text-light border-dark"}
+              className={`w-8 h-8 ease ml-6 flex items-center justify-center rounded-full p-1.5 border-2 border-opacity-50 transition-all
+                ${mode === "light" ? "bg-dark text-light border-light" : "bg-light text-dark border-dark"}
                 `}
               aria-label="theme-switcher"
             >
               {mode === "light" ? (
-                <SunIcon className={"fill-dark"} />
+                <SunIcon className={"fill-light"} />
               ) : (
-                <MoonIcon className={"fill-light"} />
+                <MoonIcon className={"fill-dark"} />
               )}
             </button>
           </nav>
