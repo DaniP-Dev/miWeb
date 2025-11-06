@@ -5,47 +5,49 @@ import AnimatedText from "@/components/AnimatedText";
 
 export default function Home() {
   return (
-    <main className="flex w-full flex-col items-center justify-center dark:text-light">
+    <main className="flex w-full flex-col dark:text-light">
       <article
-        className={`flex min-h-screen items-center text-dark dark:text-light sm:items-start`}
+        className={`flex items-start text-dark dark:text-light`}
       >
-        <Layout className="!pt-24 md:!pt-16 sm:!pt-28">
-          <div className="flex w-full items-start justify-between md:flex-col pt-10 pb-24">
-            <div className="w-1/2 md:hidden flex self-center max-h-fit">
+        <Layout className="!pt-0 sm:!pt-8 md:!pt-16">
+          <div className="flex w-full flex-col items-start justify-between sm:flex-row pt-0 sm:pt-4 pb-4 sm:pb-16">
+            <div className="flex w-full sm:w-1/2 self-center max-h-fit mb-4 sm:mb-0 justify-center">
               {
                 <Image
                   priority={true}
                   src="/logo.png"
                   alt="image"
-                  className="h-auto w-100"
+                  className="h-auto w-48 sm:w-72 md:w-80"
                   height={340}
                   width={340}
-                  sizes="33vw"
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 288px, 320px"
                 />
               }
             </div>
-            <div className="flex w-1/2 flex-col self-center lg:w-full lg:text-center">
+            <div className="flex w-full sm:w-1/2 flex-col self-center sm:text-left md:text-left">
               <AnimatedText
                 text="¡Hola! Soy DaniDev"
-                className="!text-left !text-6xl xl:!text-5xl lg:!text-center lg:!text-6xl md:!text-5xl sm:!text-3xl"
+                className="!text-center sm:!text-left !text-3xl sm:!text-5xl md:!text-6xl leading-tight"
               />
-              <div className="flex w-full items-start lg:w-full  lg:!justify-center  sm:!justify-center  md:!text-center md:inline-block md:w-full">
-                <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-5xl xl:!text-4xl lg:!text-4xl md:!text-5xl sm:!text-3xl">
+              <div className="flex w-full items-start sm:justify-start md:!justify-start md:!text-left md:inline-block">
+                <h2 className="animate-text bg-gradient-to-r from-lightGreen via-lightGreen to-slideGreen bg-clip-text text-transparent font-semibold capitalize !text-lg sm:!text-3xl md:!text-4xl text-center">
                   Desarrollo soluciones digitales a tu medida.
                 </h2>
               </div>
 
-              <p className="my-4 text-base font-medium md:text-sm sm:!text-sm">
-                Soy desarrollador web full-stack especializado en crear sitios, apps y tiendas online modernas, rápidas y seguras. Ayudo a empresas y emprendedores a potenciar su presencia digital con tecnología de vanguardia, automatización y diseño profesional.
+              <p className="my-4 text-base sm:text-base md:text-base font-semibold text-justify leading-relaxed">
+                Soy desarrollador web full-stack especializado en crear sitios,
+                apps y tiendas online modernas, rápidas y seguras. Ayudo a
+                empresas y emprendedores a potenciar su presencia digital con
+                tecnología de vanguardia, automatización y diseño profesional.
               </p>
-              <div className="mt-2 flex items-center self-start gap-3 grid-cols-2 lg:self-center">
+              <div className="mt-4 flex flex-col items-stretch sm:flex-row sm:items-center sm:self-start gap-3 w-full sm:w-auto">
                 <Link
                   href="/curriculum/"
                   target={"_self"}
-                  className={`flex items-center rounded-lg border-2 border-solid bg-dark p-2.5 px-6 text-lg font-semibold
+                  className={`flex items-center justify-center rounded-lg border-2 border-solid bg-dark py-3 px-6 text-base sm:text-base md:text-lg font-semibold
             capitalize text-light hover:border-dark hover:bg-transparent hover:text-dark 
             dark:bg-light dark:text-dark dark:hover:border-light dark:hover:bg-dark dark:hover:text-light
-            md:p-2 md:px-4 md:text-base
              `}
                 >
                   Sobre mí
@@ -53,10 +55,9 @@ export default function Home() {
                 <Link
                   href="/portafolio/"
                   target={"_self"}
-                  className={`flex items-center rounded-lg border-2 border-solid bg-light p-2.5 px-6 text-lg font-semibold
+                  className={`flex items-center justify-center rounded-lg border-2 border-solid bg-light py-3 px-6 text-base sm:text-base md:text-lg font-semibold
             capitalize text-dark hover:border-light hover:bg-dark hover:text-light 
             dark:bg-dark dark:text-light dark:hover:bg-light dark:hover:text-dark
-            md:p-2 md:px-4 md:text-base
              `}
                 >
                   Proyectos

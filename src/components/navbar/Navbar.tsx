@@ -75,25 +75,25 @@ const Navbar = () => {
       {/* Botón hamburguesa fijo para móviles */}
       <button
         type="button"
-        className="flex-col items-center justify-center flex md:hidden md:fixed md:top-8 md:left-4 md:z-[60] md:bg-light/80 md:dark:bg-dark/80 md:backdrop-blur-sm md:rounded-lg md:p-3 md:shadow-lg"
+        className="flex-col items-center justify-center flex md:hidden fixed left-4 top-4 z-[60] bg-light/80 dark:bg-dark/80 backdrop-blur-sm rounded-lg p-3"
         aria-controls="mobile-menu"
         aria-expanded={isOpen}
         onClick={handleClick}
       >
         <span className="sr-only">Open main menu</span>
         <span
-          className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${
-            isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
+          className={`bg-dark dark:bg-light block h-1 w-8 rounded-sm transition-all duration-300 ease-out ${
+            isOpen ? "rotate-45 translate-y-2" : "-translate-y-1"
           }`}
         ></span>
         <span
-          className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${
+          className={`bg-dark dark:bg-light block h-1 w-8 rounded-sm transition-all duration-300 ease-out ${
             isOpen ? "opacity-0" : "opacity-100"
-          } my-0.5`}
+          } my-1`}
         ></span>
         <span
-          className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${
-            isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
+          className={`bg-dark dark:bg-light block h-1 w-8 rounded-sm transition-all duration-300 ease-out ${
+            isOpen ? "-rotate-45 -translate-y-2" : "translate-y-1"
           }`}
         ></span>
       </button>
