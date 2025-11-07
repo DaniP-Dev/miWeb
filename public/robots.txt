@@ -2,7 +2,6 @@ User-agent: *
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
-Disallow: /dashboard/
 Disallow: /_next/
 Disallow: /node_modules/
 Disallow: /.git/

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const MotionLink = motion.create(Link);
 
@@ -25,7 +26,7 @@ const Logo = () => {
     <div className="flex flex-col items-center justify-center mt-2">
       <MotionLink
         href="/"
-        className="w-16 h-16 bg-dark text-light flex items-center justify-center rounded-full text-2xl font-bold dark:border-2 dark:border-solid dark:border-light"
+        className="w-16 h-16 bg-dark text-light flex items-center justify-center rounded-full text-2xl font-bold dark:border-2 dark:border-solid dark:border-light overflow-hidden"
         animate={isHeartbeating ? {
           scale: [1, 1.15, 1, 1.12, 1],
         } : {}}
@@ -41,7 +42,13 @@ const Logo = () => {
           transition: { duration: 1, repeat: Infinity },
         }}
       >
-        DP
+        <Image
+          src="/imgs/foto.jpg"
+          alt="Logo"
+          width={64}
+          height={64}
+          className="w-full h-full object-cover"
+        />
       </MotionLink>
     </div>
   );
