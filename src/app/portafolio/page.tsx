@@ -49,9 +49,9 @@ export async function generateMetadata(
         'Descubre mis mejores proyectos en desarrollo web y soluciones tecnológicas innovadoras.',
       images: [
         {
-          url: `${baseUrl}/images/og-portafolio.jpg`,
-          width: 1200,
-          height: 630,
+          url: `${baseUrl}/logo.png`,
+          width: 340,
+          height: 340,
           alt: 'Portafolio - Proyectos de desarrollo web',
         },
       ],

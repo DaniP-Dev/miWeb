@@ -50,9 +50,9 @@ export async function generateMetadata(
         'Explora nuestros servicios de diseño y desarrollo web personalizados para tu negocio',
       images: [
         {
-          url: `${baseUrl}/images/og-servicios.jpg`,
-          width: 1200,
-          height: 630,
+          url: `${baseUrl}/logo.png`,
+          width: 340,
+          height: 340,
           alt: 'Servicios - Desarrollo Web Personalizado',
         },
       ],

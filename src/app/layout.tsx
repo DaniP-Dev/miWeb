@@ -43,11 +43,11 @@ export const metadata: Metadata = {
       'Servicios de desarrollo web profesional - React, Next.js, TypeScript y más.',
     images: [
       {
-        url: `${baseUrl}/images/og-image.jpg`,
-        width: 1200,
-        height: 630,
+        url: `${baseUrl}/logo.png`,
+        width: 340,
+        height: 340,
         alt: 'DaniDev - Desarrollador Full Stack',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: 'Desarrollador Full Stack | DaniDev',
     description:
       'Desarrollo web profesional con React, Next.js y tecnologías modernas',
-    images: [`${baseUrl}/images/og-image.jpg`],
+    images: [`${baseUrl}/logo.png`],
   },
   robots: {
     index: true,

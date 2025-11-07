@@ -45,9 +45,9 @@ export async function generateMetadata(
         'Conoce mi experiencia, habilidades y educación como Desarrollador Full Stack. Descarga mi CV profesional.',
       images: [
         {
-          url: `${baseUrl}/images/og-curriculum.jpg`,
-          width: 1200,
-          height: 630,
+          url: `${baseUrl}/logo.png`,
+          width: 340,
+          height: 340,
           alt: 'Curriculum - Daniel Ricardo Perez Guzman Desarrollador Full Stack',
         },
       ],
